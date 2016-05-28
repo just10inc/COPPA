@@ -52,7 +52,7 @@ public class COPPA {
         return getAge (birthdate, Calendar.getInstance ());
     }
 
-    public static Calendar fromString (final String yyyymmdd) {
+    public static Calendar fromString (final String yyyymmdd) throws NumberFormatException {
         Calendar bd = Calendar.getInstance ();
         bd.setTimeInMillis (0);
         bd.set (Calendar.YEAR, Integer.parseInt (yyyymmdd.substring (0, 4)));
