@@ -52,43 +52,25 @@ namespace Just10
         {
             Assert.AreEqual (0, DateTime.Today.GetAge ());
             Assert.AreEqual (0, DateTime.Now.GetAge ());
-
-            Assert.AreEqual (0, DateTime.Today.GetAge (DateTime.Today));
-            Assert.AreEqual (0, DateTime.Now.GetAge (DateTime.Now));
-            Assert.AreEqual (0, DateTime.Today.GetAge (DateTime.Now));
-            Assert.AreEqual (0, DateTime.Now.GetAge (DateTime.Today));
-        }
-
-        [TestMethod]
-        public void TestAgesByHardDate ()
-        {
-            var bd = new DateTime (1979, 9, 22);
-
-            Assert.AreEqual (0, bd.GetAge (bd));
-            Assert.AreEqual (0, bd.GetAge (new DateTime (1979, 12, 23)));
-            Assert.AreEqual (-1, bd.GetAge (new DateTime (1979, 9, 13)));
-            Assert.AreEqual (1, bd.GetAge (new DateTime (1980, 9, 23)));
-            Assert.AreEqual (5, bd.GetAge (new DateTime (1984, 11, 2)));
-            Assert.AreEqual (6, bd.GetAge (new DateTime (1985, 12, 22)));
-            Assert.AreEqual (12, bd.GetAge (new DateTime (1991, 10, 14)));
-            Assert.AreEqual (14, bd.GetAge (new DateTime (1994, 6, 29)));
-            Assert.AreEqual (100, bd.GetAge (new DateTime (2079, 10, 29)));
         }
 
         [TestMethod]
         public void TestAgesByAddDates ()
         {
-            var now = DateTime.Today;
-
-            Assert.AreEqual (0, now.GetAge (now.AddYears (0)));
-            Assert.AreEqual (0, now.GetAge (now.AddDays (10)));
-            Assert.AreEqual (-1, now.GetAge (now.AddDays (-10)));
-
-            Assert.AreEqual (1, now.GetAge (now.AddYears (1)));
-            Assert.AreEqual (5, now.GetAge (now.AddYears (5).AddMonths (2)));
-            Assert.AreEqual (12, now.GetAge (now.AddYears (12).AddMonths (6).AddDays (10)));
-            Assert.AreEqual (14, now.GetAge (now.AddYears (14)));
-            Assert.AreEqual (200, now.GetAge (now.AddYears (200).AddDays(20)));
+            var today = DateTime.Now;
+            Assert.AreEqual (0, today.AddMonths(-3).AddDays(1).GetAge ());
+            Assert.AreEqual (0, today.AddYears(0).GetAge ());
+            Assert.AreEqual (0, today.AddDays (-10).GetAge ());
+            Assert.AreEqual (-1, today.AddDays (10).GetAge ());
+            Assert.AreEqual (1, today.AddYears (-1).GetAge ());
+            Assert.AreEqual (4, today.AddYears (-5).AddDays (1).GetAge ());
+            Assert.AreEqual (5, today.AddYears (-5).GetAge ());
+            Assert.AreEqual (5, today.AddYears (-5).AddMonths (-2).GetAge ());
+            Assert.AreEqual (12, today.AddYears (-12).AddMonths (-6).AddDays (-10).GetAge ());
+            Assert.AreEqual (12, today.AddYears (-12).AddMonths (-6).AddDays (10).GetAge ());
+            Assert.AreEqual (13, today.AddYears (-14).AddDays(1).GetAge ());
+            Assert.AreEqual (14, today.AddYears (-14).GetAge ());
+            Assert.AreEqual (200, today.AddYears (-200).AddDays (-20).GetAge ());
         }
 
         [TestMethod]

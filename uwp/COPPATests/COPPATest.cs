@@ -9,185 +9,266 @@ namespace Just10
         // AgeMeetsCOPPARequirements (DateTime birthdate)
         
         [TestMethod]
-        public void TestZeroYearOldDateTimeReturnsFalse()
+        public void TestZeroYearOldDateTimeDoesntMeetsCOPPARequirements()
         {
+            Assert.IsFalse (COPPA.AgeMeetsCOPPARequirements(DateTime.Now));
+            Assert.IsFalse (COPPA.AgeMeetsCOPPARequirements (DateTime.Now.AddDays(-15)));
+            Assert.IsFalse (COPPA.AgeMeetsCOPPARequirements (DateTime.Now.AddMonths(-5)));
         }
 
         [TestMethod]
-        public void TestOneYearOldDateTimeReturnsFalse ()
+        public void TestOneYearOldDateTimeDoesntMeetsCOPPARequirements ()
         {
+            Assert.IsFalse (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears(-1)));
+            Assert.IsFalse (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-1).AddMonths(3)));
         }
 
         [TestMethod]
-        public void TestFiveYearOldDateTimeReturnsFalse ()
+        public void TestFiveYearOldDateTimeDoesntMeetsCOPPARequirements ()
         {
+            Assert.IsFalse (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-5)));
+            Assert.IsFalse (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-5).AddMonths (6).AddDays(4)));
         }
 
         [TestMethod]
-        public void TestThirteenYearOldDateTimeReturnsFalse ()
+        public void TestThirteenYearOldDateTimeDoesntMeetsCOPPARequirements ()
         {
+            Assert.IsFalse (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-13)));
+            Assert.IsFalse (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-13).AddMonths (7)));
         }
 
         [TestMethod]
-        public void TestFourteenYearOldDayShortDateTimeReturnsFalse ()
+        public void TestFourteenYearOldDayShortDateTimeDoesntMeetsCOPPARequirements ()
         {
+            Assert.IsFalse (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-14).AddDays(1)));
         }
 
         [TestMethod]
-        public void TestFourteenYearOldDateTimeReturnsTrue ()
+        public void TestFourteenYearOldDateTimeMeetsCOPPARequirements ()
         {
+            Assert.IsTrue (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-14)));
         }
 
         [TestMethod]
-        public void TestFourteenYearOldAndADayDateTimeReturnsTrue ()
+        public void TestFourteenYearOldAndADayDateTimeMeetsCOPPARequirements ()
         {
+            Assert.IsTrue (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-14).AddDays (-1)));
         }
 
         [TestMethod]
-        public void TestFifteenYearOldDateTimeReturnsTrue ()
+        public void TestFifteenYearOldDateTimeMeetsCOPPARequirements ()
         {
+            Assert.IsTrue (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-15)));
+            Assert.IsTrue (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-15).AddDays(-20)));
+            Assert.IsTrue (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-15).AddMonths(-4).AddDays (-20)));
         }
 
         [TestMethod]
-        public void TestEighteenYearOldDateTimeReturnsTrue ()
+        public void TestEighteenYearOldDateTimeMeetsCOPPARequirements ()
         {
+            Assert.IsTrue (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-18)));
+            Assert.IsTrue (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-18).AddDays (-7)));
+            Assert.IsTrue (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-18).AddMonths (-8).AddDays (-12)));
         }
 
         [TestMethod]
-        public void TestTwentyYearOldDateTimeReturnsTrue ()
+        public void TestTwentyYearOldDateTimeMeetsCOPPARequirements ()
         {
+            Assert.IsTrue (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-20)));
+            Assert.IsTrue (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-20).AddDays (-22)));
+            Assert.IsTrue (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-20).AddMonths (-2).AddDays (-15)));
         }
 
         [TestMethod]
-        public void TestFiftyYearOldDateTimeReturnsTrue ()
+        public void TestFiftyYearOldDateTimeMeetsCOPPARequirements ()
         {
+            Assert.IsTrue (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-50)));
+            Assert.IsTrue (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-50).AddDays (-9)));
+            Assert.IsTrue (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-50).AddMonths (-10).AddDays (1)));
         }
 
         [TestMethod]
-        public void TestHundredYearOldDateTimeReturnsTrue ()
+        public void TestHundredYearOldDateTimeMeetsCOPPARequirements ()
         {
+            Assert.IsTrue (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-100)));
+            Assert.IsTrue (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-100).AddDays (-19)));
+            Assert.IsTrue (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-100).AddMonths (-3).AddDays (-21)));
         }
 
         // AgeMeetsCOPPARequirements (long birthdate)
         [TestMethod]
-        public void TestZeroYearOldLongDateReturnsFalse ()
+        public void TestZeroYearOldLongDateDoesntMeetsCOPPARequirements ()
         {
+            Assert.IsFalse (COPPA.AgeMeetsCOPPARequirements (DateTime.Now.AsMilliseconds()));
+            Assert.IsFalse (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddDays (-15).AsMilliseconds ()));
+            Assert.IsFalse (COPPA.AgeMeetsCOPPARequirements (DateTime.Now.AddMonths (-5).AsMilliseconds ()));
         }
 
         [TestMethod]
-        public void TestOneYearOldLongDateReturnsFalse ()
+        public void TestOneYearOldLongDateDoesntMeetsCOPPARequirements ()
         {
+            Assert.IsFalse (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-1).AsMilliseconds()));
+            Assert.IsFalse (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-1).AddMonths (3).AsMilliseconds ()));
         }
 
         [TestMethod]
-        public void TestFiveYearOldLongDateReturnsFalse ()
+        public void TestFiveYearOldLongDateDoesntMeetsCOPPARequirements ()
         {
+            Assert.IsFalse (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-5).AsMilliseconds()));
+            Assert.IsFalse (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-5).AddMonths (6).AddDays (4).AsMilliseconds ()));
         }
 
         [TestMethod]
-        public void TestThirteenYearOldLongDateReturnsFalse ()
+        public void TestThirteenYearOldLongDateDoesntMeetsCOPPARequirements ()
         {
+            Assert.IsFalse (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-13).AsMilliseconds()));
+            Assert.IsFalse (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-13).AddMonths (7).AsMilliseconds ()));
         }
 
         [TestMethod]
-        public void TestFourteenYearOldDayShortLongDateReturnsFalse ()
+        public void TestFourteenYearOldDayShortLongDateDoesntMeetsCOPPARequirements ()
         {
+            Assert.IsFalse (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-14).AddDays (1).AsMilliseconds()));
         }
 
         [TestMethod]
-        public void TestFourteenYearOldLongDateReturnsTrue ()
+        public void TestFourteenYearOldLongDateMeetsCOPPARequirements ()
         {
+            Assert.IsTrue (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-14).AsMilliseconds()));
         }
 
         [TestMethod]
-        public void TestFourteenYearOldAndADayLongDateReturnsTrue ()
+        public void TestFourteenYearOldAndADayLongDateMeetsCOPPARequirements ()
         {
+            Assert.IsTrue (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-14).AddDays (-1).AsMilliseconds()));
         }
 
         [TestMethod]
-        public void TestFifteenYearOldLongDateReturnsTrue ()
+        public void TestFifteenYearOldLongDateMeetsCOPPARequirements ()
         {
+            Assert.IsTrue (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-15).AsMilliseconds()));
+            Assert.IsTrue (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-15).AddDays (-20).AsMilliseconds ()));
+            Assert.IsTrue (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-15).AddMonths (-4).AddDays (-20).AsMilliseconds ()));
         }
 
         [TestMethod]
-        public void TestEighteenYearOldLongDateReturnsTrue ()
+        public void TestEighteenYearOldLongDateMeetsCOPPARequirements ()
         {
+            Assert.IsTrue (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-18).AsMilliseconds()));
+            Assert.IsTrue (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-18).AddDays (-7).AsMilliseconds ()));
+            Assert.IsTrue (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-18).AddMonths (-8).AddDays (-12).AsMilliseconds ()));
         }
 
         [TestMethod]
-        public void TestTwentyYearOldLongDateReturnsTrue ()
+        public void TestTwentyYearOldLongDateMeetsCOPPARequirements ()
         {
+            Assert.IsTrue (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-20).AsMilliseconds()));
+            Assert.IsTrue (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-20).AddDays (-22).AsMilliseconds ()));
+            Assert.IsTrue (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-20).AddMonths (-2).AddDays (-15).AsMilliseconds ()));
         }
 
         [TestMethod]
-        public void TestFiftyYearOldLongDateReturnsTrue ()
+        public void TestFiftyYearOldLongDateMeetsCOPPARequirements ()
         {
+            Assert.IsTrue (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-50).AsMilliseconds()));
+            Assert.IsTrue (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-50).AddDays (-9).AsMilliseconds ()));
+            Assert.IsTrue (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-50).AddMonths (-10).AddDays (1).AsMilliseconds ()));
         }
 
         [TestMethod]
-        public void TestHundredYearOldLongDateReturnsTrue ()
+        public void TestHundredYearOldLongDateMeetsCOPPARequirements ()
         {
+            Assert.IsTrue (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-100).AsMilliseconds()));
+            Assert.IsTrue (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-100).AddDays (-19).AsMilliseconds ()));
+            Assert.IsTrue (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-100).AddMonths (-3).AddDays (-21).AsMilliseconds ()));
         }
 
         // AgeMeetsCOPPARequirements (string yyyymmdd)
         [TestMethod]
-        public void TestZeroYearOldStringDateReturnsFalse ()
+        public void TestZeroYearOldStringDateDoesntMeetsCOPPARequirements ()
         {
+            Assert.IsFalse (COPPA.AgeMeetsCOPPARequirements (DateTime.Now.AsYYYYMMDD ()));
+            Assert.IsFalse (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddDays (-15).AsYYYYMMDD ()));
+            Assert.IsFalse (COPPA.AgeMeetsCOPPARequirements (DateTime.Now.AddMonths (-5).AsYYYYMMDD ()));
         }
 
         [TestMethod]
-        public void TestOneYearOldStringDateReturnsFalse ()
+        public void TestOneYearOldStringDateDoesntMeetsCOPPARequirements ()
         {
+            Assert.IsFalse (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-1).AsYYYYMMDD ()));
+            Assert.IsFalse (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-1).AddMonths (3).AsYYYYMMDD ()));
         }
 
         [TestMethod]
-        public void TestFiveYearOldStringDateReturnsFalse ()
+        public void TestFiveYearOldStringDateDoesntMeetsCOPPARequirements ()
         {
+            Assert.IsFalse (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-5).AsYYYYMMDD ()));
+            Assert.IsFalse (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-5).AddMonths (6).AddDays (4).AsYYYYMMDD ()));
         }
 
         [TestMethod]
-        public void TestThirteenYearOldStringDateReturnsFalse ()
+        public void TestThirteenYearOldStringDateDoesntMeetsCOPPARequirements ()
         {
+            Assert.IsFalse (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-13).AsYYYYMMDD ()));
+            Assert.IsFalse (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-13).AddMonths (7).AsYYYYMMDD ()));
         }
 
         [TestMethod]
-        public void TestFourteenYearOldDayShortStringDateReturnsFalse ()
+        public void TestFourteenYearOldDayShortStringDateDoesntMeetsCOPPARequirements ()
         {
+            Assert.IsFalse (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-14).AddDays (1).AsYYYYMMDD ()));
         }
 
         [TestMethod]
-        public void TestFourteenYearOldStringDateReturnsTrue ()
+        public void TestFourteenYearOldStringDateMeetsCOPPARequirements ()
         {
+            Assert.IsTrue (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-14).AsYYYYMMDD ()));
         }
 
         [TestMethod]
-        public void TestFourteenYearOldAndADayStringDateReturnsTrue ()
+        public void TestFourteenYearOldAndADayStringDateMeetsCOPPARequirements ()
         {
+            Assert.IsTrue (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-14).AddDays (-1).AsYYYYMMDD ()));
         }
 
         [TestMethod]
-        public void TestFifteenYearOldStringDateReturnsTrue ()
+        public void TestFifteenYearOldStringDateMeetsCOPPARequirements ()
         {
+            Assert.IsTrue (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-15).AsYYYYMMDD ()));
+            Assert.IsTrue (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-15).AddDays (-20).AsYYYYMMDD ()));
+            Assert.IsTrue (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-15).AddMonths (-4).AddDays (-20).AsYYYYMMDD ()));
         }
 
         [TestMethod]
-        public void TestEighteenYearOldStringDateReturnsTrue ()
+        public void TestEighteenYearOldStringDateMeetsCOPPARequirements ()
         {
+            Assert.IsTrue (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-18).AsYYYYMMDD ()));
+            Assert.IsTrue (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-18).AddDays (-7).AsYYYYMMDD ()));
+            Assert.IsTrue (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-18).AddMonths (-8).AddDays (-12).AsYYYYMMDD ()));
         }
 
         [TestMethod]
-        public void TestTwentyYearOldStringDateReturnsTrue ()
+        public void TestTwentyYearOldStringDateMeetsCOPPARequirements ()
         {
+            Assert.IsTrue (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-20).AsYYYYMMDD ()));
+            Assert.IsTrue (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-20).AddDays (-22).AsYYYYMMDD ()));
+            Assert.IsTrue (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-20).AddMonths (-2).AddDays (-15).AsYYYYMMDD ()));
         }
 
         [TestMethod]
-        public void TestFiftyYearOldStringDateReturnsTrue ()
+        public void TestFiftyYearOldStringDateMeetsCOPPARequirements ()
         {
+            Assert.IsTrue (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-50).AsYYYYMMDD ()));
+            Assert.IsTrue (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-50).AddDays (-9).AsYYYYMMDD ()));
+            Assert.IsTrue (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-50).AddMonths (-10).AddDays (1).AsYYYYMMDD ()));
         }
 
         [TestMethod]
-        public void TestHundredYearOldStringDateReturnsTrue ()
+        public void TestHundredYearOldStringDateMeetsCOPPARequirements ()
         {
+            Assert.IsTrue (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-100).AsYYYYMMDD ()));
+            Assert.IsTrue (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-100).AddDays (-19).AsYYYYMMDD ()));
+            Assert.IsTrue (COPPA.AgeMeetsCOPPARequirements (DateTime.Today.AddYears (-100).AddMonths (-3).AddDays (-21).AsYYYYMMDD ()));
         }
     }
 }
