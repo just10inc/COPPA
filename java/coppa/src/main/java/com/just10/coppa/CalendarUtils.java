@@ -80,29 +80,4 @@ public class CalendarUtils {
 
         return cal;
     }
-
-    /**
-     Moves the given date by the given year, month, and day values. Positive values move towards the future and
-     negative values move towards the past.
-     @param cal
-     @param years
-     @param months
-     @param days
-     */
-    static void moveDate (final Calendar cal, int years, int months, int days) {
-        if (years != 0)
-            cal.add (Calendar.YEAR, years);
-
-        if (months != 0)
-            cal.add (Calendar.MONTH, months);
-
-        if (days != 0)
-            cal.add (Calendar.DAY_OF_YEAR, days);
-    }
-
-    static Calendar moveDate (int years, int months, int days) {
-        final Calendar date = now ();
-        moveDate (date, years, months, days);
-        return date;
-    }
 }

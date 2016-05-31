@@ -5,7 +5,7 @@ import org.junit.Test;
 import java.util.Calendar;
 
 import static com.just10.coppa.CalendarUtils.fromString;
-import static com.just10.coppa.CalendarUtils.moveDate;
+import static com.just10.coppa.TestUtils.moveDate;
 import static com.just10.coppa.CalendarUtils.now;
 import static com.just10.coppa.CalendarUtils.today;
 import static com.just10.coppa.CalendarUtils.getAge;
@@ -48,44 +48,19 @@ public class CalendarUtilsTests {
     @Test
     public void testAgesByAddDates ()
     {
-        Calendar date = moveDate (0, -3, 1);
-        assertEquals (0, getAge (date));
-
-        date = moveDate (0, 0, 0);
-        assertEquals (0, getAge (date));
-
-        date = moveDate (0, 0, -10);
-        assertEquals (0, getAge (date));
-
-        date = moveDate (0, 0, 10);
-        assertEquals (-1, getAge (date));
-
-        date = moveDate (-1, 0, 0);
-        assertEquals (1, getAge (date));
-
-        date = moveDate (-5, 0, 1);
-        assertEquals (4, getAge (date));
-
-        date = moveDate (-5, 0, 0);
-        assertEquals (5, getAge (date));
-
-        date = moveDate (-5, -2, 0);
-        assertEquals (5, getAge (date));
-
-        date = moveDate (-12, -6, -10);
-        assertEquals (12, getAge (date));
-
-        date = moveDate (-12, -6, 10);
-        assertEquals (12, getAge (date));
-
-        date = moveDate (-14, 0, 1);
-        assertEquals (13, getAge (date));
-
-        date = moveDate (-14, 0, 0);
-        assertEquals (14, getAge (date));
-
-        date = moveDate (-200, 0, -20);
-        assertEquals (200, getAge (date));
+        assertEquals (0, getAge (moveDate (0, -3, 1)));
+        assertEquals (0, getAge (moveDate (0, 0, 0)));
+        assertEquals (0, getAge (moveDate (0, 0, -10)));
+        assertEquals (-1, getAge (moveDate (0, 0, 10)));
+        assertEquals (1, getAge (moveDate (-1, 0, 0)));
+        assertEquals (4, getAge (moveDate (-5, 0, 1)));
+        assertEquals (5, getAge (moveDate (-5, 0, 0)));
+        assertEquals (5, getAge (moveDate (-5, -2, 0)));
+        assertEquals (12, getAge (moveDate (-12, -6, -10)));
+        assertEquals (12, getAge (moveDate (-12, -6, 10)));
+        assertEquals (13, getAge (moveDate (-14, 0, 1)));
+        assertEquals (14, getAge (moveDate (-14, 0, 0)));
+        assertEquals (200, getAge (moveDate (-200, 0, -20)));
     }
 
     @Test

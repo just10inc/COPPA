@@ -4,7 +4,9 @@ import org.junit.Test;
 
 import java.util.Calendar;
 
-import static com.just10.coppa.CalendarUtils.moveDate;
+import static com.just10.coppa.CalendarUtils.now;
+import static com.just10.coppa.TestUtils.moveDate;
+import static com.just10.coppa.TestUtils.toyyyyMMdd;
 import static org.junit.Assert.*;
 import static com.just10.coppa.COPPA.ageMeetsCOPPARequirements;
 
@@ -196,125 +198,87 @@ public class COPPATests {
     @Test
     public void testZeroYearOldStringDateDoesntMeetsCOPPARequirements ()
     {
-        //assertFalse (ageMeetsCOPPARequirements ());
-//        assertFalse (ageMeetsCOPPARequirements (CalendarUtils.now ().AsYYYYMMDD ()));
-//        assertFalse (ageMeetsCOPPARequirements (CalendarUtils.today ().AddDays (-15).AsYYYYMMDD ()));
-//        assertFalse (ageMeetsCOPPARequirements (CalendarUtils.now ().AddMonths (-5).AsYYYYMMDD ()));
+        assertFalse (ageMeetsCOPPARequirements (toyyyyMMdd (now ())));
+        assertFalse (ageMeetsCOPPARequirements (toyyyyMMdd (moveDate (0, 0, -15))));
+        assertFalse (ageMeetsCOPPARequirements (toyyyyMMdd (moveDate (0, -5, 0))));
     }
 
     @Test
     public void testOneYearOldStringDateDoesntMeetsCOPPARequirements ()
     {
-        fail ("Not implemented");
-//        assertFalse (ageMeetsCOPPARequirements (CalendarUtils.today ().AddYears (-1).AsYYYYMMDD ()));
-//        assertFalse (ageMeetsCOPPARequirements (CalendarUtils.today ().AddYears (-1).AddMonths (3).AsYYYYMMDD
-//                                                                                                           ()));
+        assertFalse (ageMeetsCOPPARequirements (toyyyyMMdd (moveDate (-1, 0, 0))));
+        assertFalse (ageMeetsCOPPARequirements (toyyyyMMdd (moveDate (-1, 3, 0))));
     }
 
     @Test
     public void testFiveYearOldStringDateDoesntMeetsCOPPARequirements ()
     {
-        fail ("Not implemented");
-//        assertFalse (ageMeetsCOPPARequirements (CalendarUtils.today ().AddYears (-5).AsYYYYMMDD ()));
-//        assertFalse (ageMeetsCOPPARequirements (CalendarUtils.today ().AddYears (-5)
-//                                                                   .AddMonths (6)
-//                                                                   .AddDays (4)
-//                                                                   .AsYYYYMMDD ()));
+        assertFalse (ageMeetsCOPPARequirements (toyyyyMMdd (moveDate (-5, 0, 0))));
+        assertFalse (ageMeetsCOPPARequirements (toyyyyMMdd (moveDate (-5, 6, 4))));
     }
 
     @Test
     public void testThirteenYearOldStringDateDoesntMeetsCOPPARequirements ()
     {
-        fail ("Not implemented");
-//        assertFalse (ageMeetsCOPPARequirements (CalendarUtils.today ().AddYears (-13).AsYYYYMMDD ()));
-//        assertFalse (ageMeetsCOPPARequirements (CalendarUtils.today ()
-//                                                                   .AddYears (-13)
-//                                                                   .AddMonths (7)
-//                                                                   .AsYYYYMMDD ()));
+        assertFalse (ageMeetsCOPPARequirements (toyyyyMMdd (moveDate (-13, 0, 0))));
+        assertFalse (ageMeetsCOPPARequirements (toyyyyMMdd (moveDate (-13, 7, 0))));
     }
 
     @Test
     public void testFourteenYearOldDayShortStringDateDoesntMeetsCOPPARequirements ()
     {
-        fail ("Not implemented");
-//        assertFalse (ageMeetsCOPPARequirements (CalendarUtils.today ().AddYears (-14).AddDays (1).AsYYYYMMDD ()));
+        assertFalse (ageMeetsCOPPARequirements (toyyyyMMdd (moveDate (-14, 0, 1))));
     }
 
     @Test
     public void testFourteenYearOldStringDateMeetsCOPPARequirements ()
     {
-        fail ("Not implemented");
-//        assertTrue (ageMeetsCOPPARequirements (CalendarUtils.today ().AddYears (-14).AsYYYYMMDD ()));
+        assertTrue (ageMeetsCOPPARequirements (toyyyyMMdd (moveDate (-14, 0, 0))));
     }
 
     @Test
     public void testFourteenYearOldAndADayStringDateMeetsCOPPARequirements ()
     {
-        fail ("Not implemented");
-//        assertTrue (ageMeetsCOPPARequirements (CalendarUtils.today ().AddYears (-14).AddDays (-1).AsYYYYMMDD ()));
+        assertTrue (ageMeetsCOPPARequirements (toyyyyMMdd (moveDate (-14, 0, -1))));
     }
 
     @Test
     public void testFifteenYearOldStringDateMeetsCOPPARequirements ()
     {
-        fail ("Not implemented");
-//        assertTrue (ageMeetsCOPPARequirements (CalendarUtils.today ().AddYears (-15).AsYYYYMMDD ()));
-//        assertTrue (ageMeetsCOPPARequirements (CalendarUtils.today ().AddYears (-15).AddDays (-20).AsYYYYMMDD
-//                                                                                                           ()));
-//        assertTrue (ageMeetsCOPPARequirements (CalendarUtils.today ().AddYears (-15)
-//                                                                  .AddMonths (-4)
-//                                                                  .AddDays (-20)
-//                                                                  .AsYYYYMMDD ()));
+        assertTrue (ageMeetsCOPPARequirements (toyyyyMMdd (moveDate (-15, 0, 0))));
+        assertTrue (ageMeetsCOPPARequirements (toyyyyMMdd (moveDate (-15, 0, -20))));
+        assertTrue (ageMeetsCOPPARequirements (toyyyyMMdd (moveDate (-15, -4, -27))));
     }
 
     @Test
     public void testEighteenYearOldStringDateMeetsCOPPARequirements ()
     {
-        fail ("Not implemented");
-//        assertTrue (ageMeetsCOPPARequirements (CalendarUtils.today ().AddYears (-18).AsYYYYMMDD ()));
-//        assertTrue (ageMeetsCOPPARequirements (CalendarUtils.today ().AddYears (-18).AddDays (-7).AsYYYYMMDD ()));
-//        assertTrue (ageMeetsCOPPARequirements (CalendarUtils.today ().AddYears (-18)
-//                                                                  .AddMonths (-8)
-//                                                                  .AddDays (-12)
-//                                                                  .AsYYYYMMDD ()));
+        assertTrue (ageMeetsCOPPARequirements (toyyyyMMdd (moveDate (-18, 0, 0))));
+        assertTrue (ageMeetsCOPPARequirements (toyyyyMMdd (moveDate (-18, 0, -7))));
+        assertTrue (ageMeetsCOPPARequirements (toyyyyMMdd (moveDate (-18, -8, -17))));
     }
 
     @Test
     public void testTwentyYearOldStringDateMeetsCOPPARequirements ()
     {
-        fail ("Not implemented");
-//        assertTrue (ageMeetsCOPPARequirements (CalendarUtils.today ().AddYears (-20).AsYYYYMMDD ()));
-//        assertTrue (ageMeetsCOPPARequirements (CalendarUtils.today ().AddYears (-20).AddDays (-22).AsYYYYMMDD ()));
-//        assertTrue (ageMeetsCOPPARequirements (CalendarUtils.today ().AddYears (-20)
-//                                                                  .AddMonths (-2)
-//                                                                  .AddDays (-15)
-//                                                                  .AsYYYYMMDD ()));
+        assertTrue (ageMeetsCOPPARequirements (toyyyyMMdd (moveDate (-20, 0, 0))));
+        assertTrue (ageMeetsCOPPARequirements (toyyyyMMdd (moveDate (-20, 0, -23))));
+        assertTrue (ageMeetsCOPPARequirements (toyyyyMMdd (moveDate (-20, -2, -19))));
     }
 
     @Test
     public void testFiftyYearOldStringDateMeetsCOPPARequirements ()
     {
-        fail ("Not implemented");
-//        assertTrue (ageMeetsCOPPARequirements (CalendarUtils.today ().AddYears (-50).AsYYYYMMDD ()));
-//        assertTrue (ageMeetsCOPPARequirements (CalendarUtils.today ().AddYears (-50).AddDays (-9).AsYYYYMMDD ()));
-//        assertTrue (ageMeetsCOPPARequirements (CalendarUtils.today ().AddYears (-50)
-//                                                                  .AddMonths (-10)
-//                                                                  .AddDays (1)
-//                                                                  .AsYYYYMMDD ()));
+        assertTrue (ageMeetsCOPPARequirements (toyyyyMMdd (moveDate (-50, 0, 0))));
+        assertTrue (ageMeetsCOPPARequirements (toyyyyMMdd (moveDate (-50, 0, -13))));
+        assertTrue (ageMeetsCOPPARequirements (toyyyyMMdd (moveDate (-50, -10, 1))));
     }
 
     @Test
     public void testHundredYearOldStringDateMeetsCOPPARequirements ()
     {
-        fail ("Not implemented");
-//        assertTrue (ageMeetsCOPPARequirements (CalendarUtils.today ().AddYears (-100).AsYYYYMMDD ()));
-//        assertTrue (ageMeetsCOPPARequirements (CalendarUtils.today ()
-//                                                                  .AddYears (-100)
-//                                                                  .AddDays (-19)
-//                                                                  .AsYYYYMMDD ()));
-//        assertTrue (ageMeetsCOPPARequirements (CalendarUtils.today ().AddYears (-100)
-//                                                                  .AddMonths (-3)
-//                                                                  .AddDays (-21)
-//                                                                  .AsYYYYMMDD ()));
+        assertTrue (ageMeetsCOPPARequirements (toyyyyMMdd (moveDate (-100, 0, 0))));
+        assertTrue (ageMeetsCOPPARequirements (toyyyyMMdd (moveDate (-100, 0, -19))));
+        assertTrue (ageMeetsCOPPARequirements (toyyyyMMdd (moveDate (-100, -3, 7))));
     }
 }
