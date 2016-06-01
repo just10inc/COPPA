@@ -1,11 +1,11 @@
 
-/Device-Debug
-/Device-Coverage
-/Simulator-Debug
-/Simulator-Profile
-/Device-Release
-/Simulator-Coverage
-/Device-Profile
+*/Device-Debug
+*/Device-Coverage
+*/Simulator-Debug
+*/Simulator-Profile
+*/Device-Release
+*/Simulator-Coverage
+*/Device-Profile
 
 .metadata
 bin/
