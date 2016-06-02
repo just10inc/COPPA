@@ -5,7 +5,7 @@
  *      Author: mahramf
  */
 
-#include <time_utils.h>
+#include <private/time_utils.h>
 
 namespace just10
 {
@@ -13,6 +13,8 @@ namespace just10
     {
         namespace util
         {
+            const QString YYYYMMDD_FORMAT = "yyyyMMdd";
+
             QDateTime now()
             {
                 return QDateTime::currentDateTime();
@@ -21,6 +23,10 @@ namespace just10
             QDate today()
             {
                 return now().date();
+            }
+
+            QDate fromYYYYMMDD (const QString& yyyymmdd) {
+                return QDate::fromString(yyyymmdd, YYYYMMDD_FORMAT);
             }
 
             int getAge(const QDate &birthdate)

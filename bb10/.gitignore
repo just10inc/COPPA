@@ -1,4 +1,7 @@
+#BB10 simulator junk
+sim_*
 
+# BB10 config dirs
 */Device-Debug
 */Device-Coverage
 */Simulator-Debug
@@ -7,6 +10,7 @@
 */Simulator-Coverage
 */Device-Profile
 
+# Eclipse workspace junk
 .metadata
 bin/
 tmp/
