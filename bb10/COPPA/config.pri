@@ -54,7 +54,7 @@ config_pri_source_group1 {
     HEADERS += \
         $$quote($$BASEDIR/include/coppa.h) \
         $$quote($$BASEDIR/include/coppa_global.hpp) \
-        $$quote($$BASEDIR/include/private/time_utils.h)
+        $$quote($$BASEDIR/include/time_utils.h)
 }
 
 config_pri_source_group2 {
@@ -65,7 +65,7 @@ config_pri_source_group2 {
     HEADERS += \
         $$quote($$BASEDIR/include/coppa.h) \
         $$quote($$BASEDIR/include/coppa_global.hpp) \
-        $$quote($$BASEDIR/include/private/time_utils.h)
+        $$quote($$BASEDIR/include/time_utils.h)
 }
 
 CONFIG += precompile_header
@@ -79,11 +79,6 @@ lupdate_inclusion {
         $$quote($$BASEDIR/../include/*.cc) \
         $$quote($$BASEDIR/../include/*.cpp) \
         $$quote($$BASEDIR/../include/*.cxx) \
-        $$quote($$BASEDIR/../include/private/*.c) \
-        $$quote($$BASEDIR/../include/private/*.c++) \
-        $$quote($$BASEDIR/../include/private/*.cc) \
-        $$quote($$BASEDIR/../include/private/*.cpp) \
-        $$quote($$BASEDIR/../include/private/*.cxx) \
         $$quote($$BASEDIR/../src/*.c) \
         $$quote($$BASEDIR/../src/*.c++) \
         $$quote($$BASEDIR/../src/*.cc) \

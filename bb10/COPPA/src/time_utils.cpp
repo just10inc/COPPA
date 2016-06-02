@@ -5,7 +5,7 @@
  *      Author: mahramf
  */
 
-#include <private/time_utils.h>
+#include <time_utils.h>
 
 namespace just10
 {
@@ -26,6 +26,14 @@ namespace just10
             }
 
             QDate fromYYYYMMDD (const QString& yyyymmdd) {
+                if (yyyymmdd.length() != YYYYMMDD_FORMAT.length())
+                    throw "Invalid input. Provide date as yyyyMMdd (e.g. June 2, 2016 = '20160602')";
+
+                for (QString::const_iterator chr (yyyymmdd.begin()); chr != yyyymmdd.end(); chr++) {
+                    if (!chr->isDigit())
+                        throw "Non digit character in input string.";
+                }
+
                 return QDate::fromString(yyyymmdd, YYYYMMDD_FORMAT);
             }
 

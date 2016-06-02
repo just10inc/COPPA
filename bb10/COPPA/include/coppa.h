@@ -29,9 +29,7 @@ namespace just10
          * @param birthdate date of birth as a unix timestamp (millis from epoch)
          * @return true if the calculated age meets the minimum requirements and false otherwise.
          */
-        bool COPPA_EXPORT ageMeetsCOPPARequirements(const long birthdate) {
-            return ageMeetsCOPPARequirements (QDateTime::fromMSecsSinceEpoch(birthdate).date());
-        }
+        bool COPPA_EXPORT ageMeetsCOPPARequirements(const long birthdate);
 
         /*!
          * Determines whether the given date string corresponds to an age that meets COPPA requirements
@@ -45,10 +43,7 @@ namespace just10
          * @param birthdate date of birth as a QDateTime instance
          * @return true if the calculated age meets the minimum requirements and false otherwise.
          */
-        bool COPPA_EXPORT ageMeetsCOPPARequirements(const QDateTime &birthdate)
-        {
-            return ageMeetsCOPPARequirements(birthdate.date());
-        }
+        bool COPPA_EXPORT ageMeetsCOPPARequirements(const QDateTime &birthdate);
     }
 }
 #endif /* COPPA_H_ */

@@ -6,12 +6,14 @@
  */
 
 #include <coppa.h>
-#include <private/time_utils.h>
+#include <time_utils.h>
 #include <QtCore/QDateTime>
 #include <QtCore/QString>
 
-namespace just10 {
-    namespace coppa {
+namespace just10
+{
+    namespace coppa
+    {
         const int MINIMUM_AGE = 14;
 
         bool ageMeetsCOPPARequirements(const QString &birthdate)
@@ -23,7 +25,16 @@ namespace just10 {
         {
             return util::getAge(birthdate) >= MINIMUM_AGE;
         }
+
+        bool ageMeetsCOPPARequirements(const long birthdate)
+        {
+            return ageMeetsCOPPARequirements(QDateTime::fromMSecsSinceEpoch(birthdate).date());
+        }
+
+        bool ageMeetsCOPPARequirements(const QDateTime &birthdate)
+        {
+            return ageMeetsCOPPARequirements(birthdate.date());
+        }
     }
 }
-
 
