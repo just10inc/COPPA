@@ -6,6 +6,7 @@
  */
 
 #include <time_utils.h>
+#include <QDebug>
 
 namespace just10
 {

@@ -26,7 +26,7 @@ namespace just10
             return util::getAge(birthdate) >= MINIMUM_AGE;
         }
 
-        bool ageMeetsCOPPARequirements(const long birthdate)
+        bool ageMeetsCOPPARequirements(const qint64 birthdate)
         {
             return ageMeetsCOPPARequirements(QDateTime::fromMSecsSinceEpoch(birthdate).date());
         }

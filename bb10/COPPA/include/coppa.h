@@ -26,10 +26,10 @@ namespace just10
 
         /*!
          * Determines whether the given timestamp corresponds to an age that meets COPPA requirements
-         * @param birthdate date of birth as a unix timestamp (millis from epoch)
+         * @param birthdate date of birth as the number of milliseconds from epoch
          * @return true if the calculated age meets the minimum requirements and false otherwise.
          */
-        bool COPPA_EXPORT ageMeetsCOPPARequirements(const long birthdate);
+        bool COPPA_EXPORT ageMeetsCOPPARequirements(const qint64 birthdate);
 
         /*!
          * Determines whether the given date string corresponds to an age that meets COPPA requirements

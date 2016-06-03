@@ -217,3 +217,4 @@ void COPPATests::testHundredYearOldStringDateMeetsCOPPARequirements()
     ASSERT_TRUE(ageMeetsCOPPARequirements(moveDate(-100, 0, -19).toString("yyyyMMdd")));
     ASSERT_TRUE(ageMeetsCOPPARequirements(moveDate(-100, -4, -14).toString("yyyyMMdd")));
 }
+
