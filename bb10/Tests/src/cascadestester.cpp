@@ -66,15 +66,15 @@ CascadesTester::~CascadesTester()
 void CascadesTester::addTestSuite(QTestSuite* suite)
 {
     mSuites.push_back(suite);
-    qDebug ("Registered %s for execution", suite->Name());
+    qDebug("Registered %s for execution", suite->Name());
 }
 
 void CascadesTester::startTest()
 {
+    const int numSuites = mSuites.size();
     int failedTests = 0;
     int failedSuites = 0;
     int current = 0;
-    const uint numSuites = mSuites.size();
 
     std::vector<QTestSuite*>::iterator suites;
 
@@ -90,14 +90,19 @@ void CascadesTester::startTest()
             failedTests += failures;
         }
 
-        qDebug("%d tests failed in '%s'", failures, suite->Name());
+        if (failures == 0)
+            qDebug("[PASS] %s: All tests passed.", suite->Name());
+        else
+            qDebug("[FAIL] %s: %d test%s failed.", suite->Name(), failures, failures > 1 ? "s":"");
     }
+
+    // terminate application
+    bb::cascades::Application::exit(failedSuites);
+
+    qDebug();
 
     if (failedSuites == 0)
         qDebug("All tests passed. Good job.");
     else
-        qDebug("%d tests failed in %d suites.", failedTests, failedSuites);
-
-    // terminate application
-    bb::cascades::Application::exit(failedSuites);
+        qDebug("%d tests failed in %d of %d suites.", failedTests, failedSuites, numSuites);
 }

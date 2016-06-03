@@ -13,7 +13,7 @@ namespace just10
     {
         namespace util
         {
-            const QString YYYYMMDD_FORMAT = "yyyyMMdd";
+            static const QString YYYYMMDD_FORMAT = "yyyyMMdd";
 
             QDateTime now()
             {
@@ -34,7 +34,12 @@ namespace just10
                         throw "Non digit character in input string.";
                 }
 
-                return QDate::fromString(yyyymmdd, YYYYMMDD_FORMAT);
+                const QDate result = QDate::fromString(yyyymmdd, YYYYMMDD_FORMAT);
+
+                if (!result.isValid())
+                    throw "Invalid date input";
+
+                return result;
             }
 
             int getAge(const QDate &birthdate)

@@ -15,19 +15,6 @@ class COPPATests: public QTestSuite
 {
     Q_OBJECT
 private slots:
-    // AgeMeetsCOPPARequirements (QDateTime birthdate)
-    void testZeroYearOldDateTimeDoesntMeetsCOPPARequirements();
-    void testOneYearOldDateTimeDoesntMeetsCOPPARequirements ();
-    void testFiveYearOldDateTimeDoesntMeetsCOPPARequirements ();
-    void testThirteenYearOldDateTimeDoesntMeetsCOPPARequirements ();
-    void testFourteenYearOldDayShortDateTimeDoesntMeetsCOPPARequirements ();
-    void testFourteenYearOldDateTimeMeetsCOPPARequirements ();
-    void testFourteenYearOldAndADayDateTimeMeetsCOPPARequirements ();
-    void testFifteenYearOldDateTimeMeetsCOPPARequirements ();
-    void testEighteenYearOldDateTimeMeetsCOPPARequirements ();
-    void testTwentyYearOldDateTimeMeetsCOPPARequirements ();
-    void testFiftyYearOldDateTimeMeetsCOPPARequirements ();
-    void testHundredYearOldDateTimeMeetsCOPPARequirements ();
     // AgeMeetsCOPPARequirements (QDate birthdate)
     void testZeroYearOldDateDoesntMeetsCOPPARequirements();
     void testOneYearOldDateDoesntMeetsCOPPARequirements ();

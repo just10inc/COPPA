@@ -16,6 +16,10 @@ namespace just10
     {
         namespace util
         {
+            QDateTime now();
+
+            QDate today();
+
             QDate fromYYYYMMDD (const QString& yyyymmdd);
 
             int getAge(const QDate &birthdate);

@@ -98,6 +98,7 @@ config_pri_source_group1 {
     SOURCES += \
         $$quote($$BASEDIR/src/COPPATests.cpp) \
         $$quote($$BASEDIR/src/QTestSuite.cpp) \
+        $$quote($$BASEDIR/src/TestUtils.cpp) \
         $$quote($$BASEDIR/src/TimeUtilsTests.cpp) \
         $$quote($$BASEDIR/src/applicationui.cpp) \
         $$quote($$BASEDIR/src/cascadestester.cpp) \
@@ -105,8 +106,8 @@ config_pri_source_group1 {
 
     HEADERS += \
         $$quote($$BASEDIR/src/COPPATests.h) \
-        $$quote($$BASEDIR/src/QTestExtensions.h) \
         $$quote($$BASEDIR/src/QTestSuite.h) \
+        $$quote($$BASEDIR/src/TestUtils.h) \
         $$quote($$BASEDIR/src/TimeUtilsTests.h) \
         $$quote($$BASEDIR/src/applicationui.hpp) \
         $$quote($$BASEDIR/src/cascadestester.hpp)

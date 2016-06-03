@@ -22,6 +22,7 @@ private slots:
     void testQDateFromNonDigitYearStringThrows ();
     void testQDateFromNonDigitMonthStringThrows ();
     void testQDateFromNonDigitDayStringThrows ();
+    void testInvalidQDateFromStringThrows ();
     void testQDateFromTooShortString ();
     void testQDateFromTooLongString ();
     void testBornTodayIsZeroAged ();
@@ -31,11 +32,5 @@ public:
     explicit TimeUtilsTests() : QTestSuite() {};
     virtual const char * Name();
 };
-
-/*
- QDate fromYYYYMMDD (const QString& yyyymmdd);
-
- int getAge(const QDate &birthdate);
- */
 
 #endif /* TIMEUTILSTESTS_H_ */
