@@ -9,8 +9,13 @@
 /* Begin PBXBuildFile section */
 		C18673441D02364D0028F091 /* COPPA.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C18673431D02364D0028F091 /* COPPA.h */; };
 		C18673461D02364D0028F091 /* COPPA.m in Sources */ = {isa = PBXBuildFile; fileRef = C18673451D02364D0028F091 /* COPPA.m */; };
-		C18673531D0236E30028F091 /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = C18673521D0236E30028F091 /* Tests.m */; };
+		C18673531D0236E30028F091 /* DateExtensionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C18673521D0236E30028F091 /* DateExtensionsTests.m */; };
 		C18673551D0236E30028F091 /* libCOPPA.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C18673401D02364D0028F091 /* libCOPPA.a */; };
+		C1A3A3561D05F29600457BD4 /* NSDate_COPPAExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C1A3A3551D05F29600457BD4 /* NSDate_COPPAExtensions.m */; };
+		C1A3A3581D05F95C00457BD4 /* COPPAAgeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C1A3A3571D05F95C00457BD4 /* COPPAAgeTests.m */; };
+		C1A3A35A1D05FF2D00457BD4 /* TestUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = C1A3A3591D05FF2D00457BD4 /* TestUtils.m */; };
+		C1A3A35C1D0611A500457BD4 /* NSDate_COPPAExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C1A3A3551D05F29600457BD4 /* NSDate_COPPAExtensions.m */; };
+		C1A3A35D1D0611EC00457BD4 /* COPPA.m in Sources */ = {isa = PBXBuildFile; fileRef = C18673451D02364D0028F091 /* COPPA.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,8 +46,13 @@
 		C18673431D02364D0028F091 /* COPPA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = COPPA.h; sourceTree = "<group>"; };
 		C18673451D02364D0028F091 /* COPPA.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = COPPA.m; sourceTree = "<group>"; };
 		C18673501D0236E30028F091 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C18673521D0236E30028F091 /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
+		C18673521D0236E30028F091 /* DateExtensionsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DateExtensionsTests.m; sourceTree = "<group>"; };
 		C18673541D0236E30028F091 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1A3A3541D05F11400457BD4 /* NSDate_COPPAExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDate_COPPAExtensions.h; sourceTree = "<group>"; };
+		C1A3A3551D05F29600457BD4 /* NSDate_COPPAExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDate_COPPAExtensions.m; sourceTree = "<group>"; };
+		C1A3A3571D05F95C00457BD4 /* COPPAAgeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COPPAAgeTests.m; sourceTree = "<group>"; };
+		C1A3A3591D05FF2D00457BD4 /* TestUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestUtils.m; sourceTree = "<group>"; };
+		C1A3A35B1D05FFBA00457BD4 /* TestUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestUtils.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +97,8 @@
 			children = (
 				C18673431D02364D0028F091 /* COPPA.h */,
 				C18673451D02364D0028F091 /* COPPA.m */,
+				C1A3A3541D05F11400457BD4 /* NSDate_COPPAExtensions.h */,
+				C1A3A3551D05F29600457BD4 /* NSDate_COPPAExtensions.m */,
 			);
 			path = COPPA;
 			sourceTree = "<group>";
@@ -94,8 +106,11 @@
 		C18673511D0236E30028F091 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				C18673521D0236E30028F091 /* Tests.m */,
+				C1A3A35B1D05FFBA00457BD4 /* TestUtils.h */,
+				C1A3A3571D05F95C00457BD4 /* COPPAAgeTests.m */,
+				C18673521D0236E30028F091 /* DateExtensionsTests.m */,
 				C18673541D0236E30028F091 /* Info.plist */,
+				C1A3A3591D05FF2D00457BD4 /* TestUtils.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -188,6 +203,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1A3A3561D05F29600457BD4 /* NSDate_COPPAExtensions.m in Sources */,
 				C18673461D02364D0028F091 /* COPPA.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -196,7 +212,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C18673531D0236E30028F091 /* Tests.m in Sources */,
+				C1A3A35C1D0611A500457BD4 /* NSDate_COPPAExtensions.m in Sources */,
+				C18673531D0236E30028F091 /* DateExtensionsTests.m in Sources */,
+				C1A3A3581D05F95C00457BD4 /* COPPAAgeTests.m in Sources */,
+				C1A3A35D1D0611EC00457BD4 /* COPPA.m in Sources */,
+				C1A3A35A1D05FF2D00457BD4 /* TestUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +368,7 @@
 				C186734B1D02364D0028F091 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C18673581D0236E30028F091 /* Build configuration list for PBXNativeTarget "Tests" */ = {
 			isa = XCConfigurationList;
@@ -356,6 +377,7 @@
 				C186735A1D0236E30028F091 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

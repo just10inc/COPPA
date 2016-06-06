@@ -1,6 +1,6 @@
 //
-//  Tests.m
-//  Tests
+//  COPPAAgeTests.m
+//  COPPA Age ßTests
 //
 //  Created by Mahram Zojajpour Foadi on 2016-06-03.
 //  Copyright © 2016 just10. All rights reserved.
@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-@interface Tests : XCTestCase
+@interface COPPAAgeTests : XCTestCase
 
 @end
 
-@implementation Tests
+@implementation COPPAAgeTests
 
 - (void)setUp {
     [super setUp];

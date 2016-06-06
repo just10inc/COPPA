@@ -10,7 +10,7 @@
 
 @interface COPPA : NSObject
 
-+ (bool) ageMeetsCOPPARequirementsWithSeconds: (long) birthdate;
++ (bool) ageMeetsCOPPARequirementsWithSeconds: (long) secondsFromEpoch;
 + (bool) ageMeetsCOPPARequirementsWithDate: (NSDate *) birthdate;
 + (bool) ageMeetsCOPPARequirementsWithYYYYMMdd: (NSString *) birthdate;
 
