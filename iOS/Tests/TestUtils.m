@@ -20,4 +20,12 @@
     return [[NSDate currentCalendar] dateByAddingComponents:dc toDate:[NSDate date] options:NSCalendarWrapComponents];
 }
 
++ (long) moveDateAsLongByYears: (int)years Months:(int) months Days:(int) days {
+    return [[TestUtils moveDateByYears:years Months:months Days:days] timeIntervalSince1970];
+}
+
++ (NSString*) moveDateAsStringByYears: (int)years Months:(int) months Days:(int) days {
+    return [[TestUtils moveDateByYears:years Months:months Days:days] toyyyyMMdd];
+}
+
 @end

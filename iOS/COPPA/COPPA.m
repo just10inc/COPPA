@@ -24,7 +24,7 @@ const NSInteger MINIMUM_AGE = 14;
 }
 
 + (bool) ageMeetsCOPPARequirementsWithYYYYMMdd: (NSString *) birthdate {
-    return false;
+    return [COPPA ageMeetsCOPPARequirementsWithDate:[NSDate fromString:birthdate]];
 }
 
 @end

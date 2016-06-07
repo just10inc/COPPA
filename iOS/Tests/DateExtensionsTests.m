@@ -12,18 +12,6 @@
 
 @interface DateExtensionsTests : XCTestCase
 
-- (void)testTodayZeroAge;
-- (void)testAgesByAddDates;
-- (void)testDateFromStringParsesCorrectly;
-- (void)testDateFromNilStringThrows;
-- (void)testDateFromStringMissingYearThrows;
-- (void)testDateFromShortStringThrows;
-- (void)testDateFromTooLongStringThrows;
-- (void)testDateFromNonNumericStringThrows;
-- (void)testDateFromStringNonNumericYearThrows;
-- (void)testDateFromStringNonNumericMonthThrows;
-- (void)testDateFromStringNonNumericDayThrows;
-
 @end
 
 #define XCTAssertDate(date, y, m, d) [self assertDate:date hasYear:y hasMonth:m hasDay:d];
@@ -32,11 +20,9 @@
 
 - (void)setUp {
     [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
 }
 
 - (void)tearDown {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
 }
 

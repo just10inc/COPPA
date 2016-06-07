@@ -22,20 +22,26 @@ const NSString* YYYYMMDD_FORMAT = @"yyyyMMdd";
     return cc;    
 }
 
-+ (NSDate*) fromString: (NSString*) yyyyMMdd {
++ (NSDateFormatter*) yyyyMMddFormatter {
     static NSDateFormatter* df = nil;
-    
-    if (!yyyyMMdd) [NSException raise:@"nil input" format:@"Date must be provided in %@ format", YYYYMMDD_FORMAT];
-    
-    if ([yyyyMMdd length] != [YYYYMMDD_FORMAT length])
-        [NSException raise:@"invalid input" format:@"Invalid date format."];
     
     if (!df) {
         df = [[NSDateFormatter alloc] init];
         [df setDateFormat:YYYYMMDD_FORMAT];
     }
     
-    NSDate* date = [df dateFromString:yyyyMMdd];
+    return df;
+}
+
++ (NSDate*) fromString: (NSString*) yyyyMMdd {
+    
+    
+    if (!yyyyMMdd) [NSException raise:@"nil input" format:@"Date must be provided in %@ format", YYYYMMDD_FORMAT];
+    
+    if ([yyyyMMdd length] != [YYYYMMDD_FORMAT length])
+        [NSException raise:@"invalid input" format:@"Invalid date format."];
+    
+    NSDate* date = [[NSDate yyyyMMddFormatter] dateFromString:yyyyMMdd];
     
     if (!date) [NSException raise:@"Invalid input" format:@"Unable to parse '%@' as a date", yyyyMMdd];
     
@@ -58,6 +64,10 @@ const NSString* YYYYMMDD_FORMAT = @"yyyyMMdd";
                                        (birthMonth == thisMonth && birthDay > thisDay));
     
     return thisYear - birthYear - (notReachedBDThisYear ? 1 : 0);
+}
+
+- (NSString*) toyyyyMMdd {
+    return [[NSDate yyyyMMddFormatter] stringFromDate:self];
 }
 
 @end

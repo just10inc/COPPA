@@ -16,6 +16,8 @@ extern const NSCalendarUnit DEFAULT_DATE_COMPONENTS;
 
 - (NSInteger) calculateAge;
 
+- (NSString*) toyyyyMMdd;
+
 + (NSDate*) fromString: (NSString*) yyyyMMdd;
 
 @end

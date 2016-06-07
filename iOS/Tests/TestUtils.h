@@ -12,4 +12,8 @@
 
 + (NSDate*) moveDateByYears: (int)years Months:(int) months Days:(int) days;
 
++ (long) moveDateAsLongByYears: (int)years Months:(int) months Days:(int) days;
+
++ (NSString*) moveDateAsStringByYears: (int)years Months:(int) months Days:(int) days;
+
 @end
