@@ -15,14 +15,15 @@ public class CalendarUtils {
         final Calendar today = today ();
 
         final int birthYear = birthdate.get (Calendar.YEAR);
-        final int refYear = today.get (Calendar.YEAR);
         final int birthMonth = birthdate.get (Calendar.MONTH);
-        final int refMonth = today.get (Calendar.MONTH);
         final int birthDay = birthdate.get (Calendar.DAY_OF_MONTH);
-        final int refDay = today.get (Calendar.DAY_OF_MONTH);
+        
+        final int thisYear = today.get (Calendar.YEAR);
+        final int thisMonth = today.get (Calendar.MONTH);       
+        final int thisDay = today.get (Calendar.DAY_OF_MONTH);
 
-        final boolean notReachedBDThisYear = (birthMonth > refMonth || (birthMonth == refMonth && birthDay > refDay));
-        return refYear - birthYear - (notReachedBDThisYear ? 1 : 0);
+        final boolean notReachedBDThisYear = (birthMonth > thisMonth || (birthMonth == thisMonth && birthDay > thisDay));
+        return thisYear - birthYear - (notReachedBDThisYear ? 1 : 0);
     }
 
     /**
