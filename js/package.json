@@ -1,9 +1,9 @@
 {
   "name": "COPPAjs",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "dependencies" :
   {
     "mocha": "latest",
-    "chai": "latest",
+    "chai": "latest"
   }
 }

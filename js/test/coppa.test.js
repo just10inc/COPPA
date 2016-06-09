@@ -1,5 +1,17 @@
 /**
- * Created by mahramf on 2016-06-08.
+ Copyright 2016 Just10 Inc.
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+ http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
  */
 var assert = require ('chai').assert;
 var vanilla = require('./../src/vanilla');
@@ -65,55 +77,74 @@ describe ('moveDate', function () {
 
 describe('COPPA', function() {
     it('age check function is defined', function () {
-        assert.equal(true, lib.ageMeetsCOPPARequirements != null , 'function ageMeetsCOPPARequirements is undefined');
-        assert.equal('function', typeof lib.ageMeetsCOPPARequirements, 'ageMeetsCOPPARequirements is not a function');
+        assert.equal(lib.ageMeetsCOPPARequirements != null , true, 'function ageMeetsCOPPARequirements is undefined');
+        assert.equal(typeof lib.ageMeetsCOPPARequirements, 'function', 'ageMeetsCOPPARequirements is not a function');
     });
 
     it('Zero years old does not meet COPPA requirements', function () {
-        assert.equal(true, lib.ageMeetsCOPPARequirements("1979 09 22"));
+        assert.equal( lib.ageMeetsCOPPARequirements(moveDate(0,0,0)), false);
+        assert.equal( lib.ageMeetsCOPPARequirements(moveDate(0,0,-11)), false);
+        assert.equal( lib.ageMeetsCOPPARequirements(moveDate(0,-4,-17)), false);
     });
 
     it('One year old does not meet COPPA requirements', function () {
-        assert.equal(false, true, 'not implemented');
+        assert.equal( lib.ageMeetsCOPPARequirements(moveDate(-1,0,0)), false);
+        assert.equal( lib.ageMeetsCOPPARequirements(moveDate(-1,0,-27)), false);
+        assert.equal( lib.ageMeetsCOPPARequirements(moveDate(-1,-3,-15)), false);
     });
 
     it('5 year old does not meet COPPA requirements', function () {
-        assert.equal(false, true, 'not implemented');
+        assert.equal( lib.ageMeetsCOPPARequirements(moveDate(-5,0,0)), false);
+        assert.equal( lib.ageMeetsCOPPARequirements(moveDate(-5,0,-9)), false);
+        assert.equal( lib.ageMeetsCOPPARequirements(moveDate(-5,-4,15)), false);
     });
 
     it('13 year old does not meet COPPA requirements', function () {
-        assert.equal(false, true, 'not implemented');
+        assert.equal( lib.ageMeetsCOPPARequirements(moveDate(-13,0,0)), false);
+        assert.equal( lib.ageMeetsCOPPARequirements(moveDate(-13,0,-18)), false);
+        assert.equal( lib.ageMeetsCOPPARequirements(moveDate(-13,-6,-10)), false);
     });
 
-    it('A day short of 14 year old does not meet COPPA requirements', function () {
-        assert.equal(false, true, 'not implemented');
+    it('A day short of 14 years old does not meet COPPA requirements', function () {
+        assert.equal(lib.ageMeetsCOPPARequirements(moveDate(-14,0,1)), false);
     });
 
     it('14 year old meets COPPA requirements', function () {
-        assert.equal(false, true, 'not implemented');
+        assert.equal(lib.ageMeetsCOPPARequirements(moveDate(-14,0,0)), true);
     });
 
     it('14 & change year old meets COPPA requirements', function () {
-        assert.equal(false, true, 'not implemented');
+        assert.equal(lib.ageMeetsCOPPARequirements(moveDate(-14,-2,0)), true);
+        assert.equal(lib.ageMeetsCOPPARequirements(moveDate(-14,-7,3)), true);
     });
 
     it('15 year old meets COPPA requirements', function () {
-        assert.equal(false, true, 'not implemented');
+        assert.equal( lib.ageMeetsCOPPARequirements(moveDate(-15,0,0)), true);
+        assert.equal( lib.ageMeetsCOPPARequirements(moveDate(-15,0,-28)), true);
+        assert.equal( lib.ageMeetsCOPPARequirements(moveDate(-15,-2,-17)), true);
     });
 
     it('18 year old meets COPPA requirements', function () {
-        assert.equal(false, true, 'not implemented');
+        assert.equal( lib.ageMeetsCOPPARequirements(moveDate(-18,0,0)), true);
+        assert.equal( lib.ageMeetsCOPPARequirements(moveDate(-18,0,-8)), true);
+        assert.equal( lib.ageMeetsCOPPARequirements(moveDate(-18,-5,7)), true);
     });
 
     it('20 year old meets COPPA requirements', function () {
-        assert.equal(false, true, 'not implemented');
+        assert.equal( lib.ageMeetsCOPPARequirements(moveDate(-20,0,0)), true);
+        assert.equal( lib.ageMeetsCOPPARequirements(moveDate(-20,0,-11)), true);
+        assert.equal( lib.ageMeetsCOPPARequirements(moveDate(-20,-3,27)), true);
     });
 
     it('50 year old meets COPPA requirements', function () {
-        assert.equal(false, true, 'not implemented');
+        assert.equal( lib.ageMeetsCOPPARequirements(moveDate(-50,0,0)), true);
+        assert.equal( lib.ageMeetsCOPPARequirements(moveDate(-50,0,-20)), true);
+        assert.equal( lib.ageMeetsCOPPARequirements(moveDate(-50,-3,13)), true);
     });
 
     it('100 year old meets COPPA requirements', function () {
-        assert.equal(false, true, 'not implemented');
+        assert.equal( lib.ageMeetsCOPPARequirements(moveDate(-100,0,0)), true);
+        assert.equal( lib.ageMeetsCOPPARequirements(moveDate(-100,0,-5)), true);
+        assert.equal( lib.ageMeetsCOPPARequirements(moveDate(-100,-8,20)), true);
     });
 });

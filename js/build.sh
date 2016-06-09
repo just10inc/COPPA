@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Copyright 2016 Just10 Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,22 +14,26 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-LIBTARGET = COPPA
+VERSION_MAJOR=1
+VERSION_MINOR=0
+VERSION_PATCH=0
 
-profile {
-    LIBTARGETDIR_PROFILE = -p
-}
-CONFIG(debug, debug|release) {
-    LIBTARGETDIR_DEBUG = -g
-}
-device {
-    LIBTARGETDIR = arm$${LIBTARGETDIR_PROFILE}/so.le-v7$${LIBTARGETDIR_DEBUG}
-}
-simulator {
-    LIBTARGETDIR = x86$${LIBTARGETDIR_PROFILE}/so$${LIBTARGETDIR_DEBUG}
-}
+UGLIFIER=$(which uglifyjs)
 
-BASEDIR      = $${PWD}
-INCLUDEPATH *= $$quote($${BASEDIR}/include)
-DEPENDPATH  *= $$quote($${BASEDIR}/include)
-LIBS        += -L$${BASEDIR}/$${LIBTARGETDIR} -l$${LIBTARGET}
+if [ -z $UGLIFIER ]; then
+    echo "uglify-js not found. Install it by running 'npm install -g uglify-js'"
+    exit -1
+fi
+
+echo "Using uglifier $UGLIFIER"
+
+OUTPUT="j10-coppa-$VERSION_MAJOR.$VERSION_MINOR.$VERSION_PATCH.min.js"
+
+if [ -e "$OUTPUT" ]; then
+    echo "Deleting $OUTPUT"
+  rm -vf $OUTPUT
+fi
+
+echo "Minifying into $OUTPUT..."
+
+$UGLIFIER src/coppa.js -o $OUTPUT
