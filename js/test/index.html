@@ -3,13 +3,34 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>QUnit Example</title>
-    <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-1.23.1.css">
+    <title>COPPA js lib test</title>
+    <script src="../src/coppa.js"></script>
+
+    <script>
+        function checkAge () {
+            var dob = document.getElementById("bday").value;
+            console.log("dob: " + dob);
+
+            if (COPPA.ageMeetsCOPPARequirements(dob)) {
+                console.log("You're in!");
+                return true;
+            } else {
+                console.log("Sorry kid!");
+                return false;
+            }
+        }
+
+        //        function getMaxDate () {
+        //            var today = new Date();
+        //            return today.getFullYear() + "-" + today.getMonth() + "-" + today.getDate();
+        //        }
+    </script>
 </head>
 <body>
-<div id="qunit"></div>
-<div id="qunit-fixture"></div>
-<script src="../src/coppa.js"></script>
-<script src="coppa.test.js"></script>
+
+<input type="date" name="bday" id="bday" >
+<input type="submit" onclick="checkAge ()">
+
+
 </body>
 </html>

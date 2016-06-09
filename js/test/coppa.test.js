@@ -2,7 +2,9 @@
  * Created by mahramf on 2016-06-08.
  */
 var assert = require ('chai').assert;
-var lib = require ('../src/coppa.js');
+var vanilla = require('./../src/vanilla');
+var coppa_lib = vanilla.require('./../src/coppa.js',['COPPA'])
+var lib = coppa_lib.COPPA;
 
 function moveDate (years, months, days) {
     var date = new Date();
