@@ -1,27 +1,29 @@
 /**
  * Created by mahra on 2016-06-07.
  */
-exports.ageMeetsCOPPARequirements = function (birthdate) {
-    var MINIMUM_AGE = 14;
+var COPPA = {};
 
-        if (null == birthdate)
-            throw "No birthdate provided";
+COPPA.ageMeetsCOPPARequirements = function (birthdate) {
+  var MINIMUM_AGE = 14;
 
-        var dob = new Date(Date.parse(birthdate));
+  if (null == birthdate)
+    throw "No birthdate provided";
 
-        if (isNaN(dob))
-            throw "Invalid birthdate provided: " + birthdate;
+  var dob = new Date(Date.parse(birthdate));
 
-        var today = new Date();
+  if (isNaN(dob))
+    throw "Invalid birthdate provided: " + birthdate;
 
-        var age = today.getYear() - dob.getYear();
+  var today = new Date();
 
-        var birthMonth = dob.getMonth();
-        var thisMonth = today.getMonth();
+  var age = today.getYear() - dob.getYear();
 
-        if (birthMonth > thisMonth || (birthMonth == thisMonth && dob.getDay() > today.getDay())) {
-            age--;
-        }
+  var birthMonth = dob.getMonth();
+  var thisMonth = today.getMonth();
 
-        return age >= MINIMUM_AGE;
+  if (birthMonth > thisMonth || (birthMonth == thisMonth && dob.getDay() > today.getDay())) {
+    age--;
+  }
+
+  return age >= MINIMUM_AGE;
 };
