@@ -1,0 +1,7 @@
+.method_detail {
+    border: solid 1px #b5e853;
+    border-collapse: collapse;
+    padding: 5px 15px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
