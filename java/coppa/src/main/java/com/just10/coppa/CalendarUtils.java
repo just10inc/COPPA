@@ -18,7 +18,8 @@ package com.just10.coppa;
 import java.util.Calendar;
 
 /**
- Created by mahramf on 2016-05-30.
+ Simple calendar utility methods.
+ * @author Mahram Z. Foadi
  */
 public class CalendarUtils {
     /**

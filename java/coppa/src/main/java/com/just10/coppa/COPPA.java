@@ -25,13 +25,19 @@ import static com.just10.coppa.CalendarUtils.fromString;
 import static com.just10.coppa.CalendarUtils.getAge;
 
 /**
- Created by mahramf on 2016-05-27.
+ * COPPA age check methods
+ * @author Mahram Z. Foadi
  */
 @NoArgsConstructor (access = AccessLevel.PRIVATE)
 public class COPPA {
     private static final int MINIMUM_AGE = 14;
     private static final String DATE_STRING_FORMAT = "yyyymmdd";
 
+    /**
+     * Is a user with the provided birthday old enough to meet COPPA requirements?
+     * @param birthdate the user's birth date as a {@link Calendar} instance.
+     * @return <code>true</code> if the user is old enough and <code>false</code> otherwise.
+     */
     public static boolean ageMeetsCOPPARequirements (final Calendar birthdate) {
         if (null == birthdate)
             throw new NullPointerException ("birthdate");
@@ -39,12 +45,23 @@ public class COPPA {
         return getAge (birthdate) >= MINIMUM_AGE;
     }
 
+    /**
+     * Is a user with the provided birthday old enough to meet COPPA requirements?
+     * @param birthdate the user's birth date as milliseconds since midnight January 1, 1970 UTC
+     *                  (e.g. from ${@link System#currentTimeMillis()}
+     * @return <code>true</code> if the user is old enough and <code>false</code> otherwise.
+     */
     public static boolean ageMeetsCOPPARequirements (final long birthdate) {
         Calendar bd = Calendar.getInstance ();
         bd.setTimeInMillis (birthdate);
         return ageMeetsCOPPARequirements (bd);
     }
 
+    /**
+     * Is a user with the provided birthday old enough to meet COPPA requirements?
+     * @param yyyymmdd the user's birth date as a date string in yyyymmdd format (e.g. 19990912 for September 12, 1999)
+     * @return <code>true</code> if the user is old enough and <code>false</code> otherwise.
+     */
     public static boolean ageMeetsCOPPARequirements (final String yyyymmdd) {
         if (yyyymmdd == null) throw new NullPointerException ("yyyymmdd");
 
