@@ -1,36 +1,193 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
 
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+    <link rel="stylesheet" type="text/css" href="stylesheets/j10.css" media="screen">
 
     <title>COPPA by Just10 Inc. UWP documentation</title>
-  </head>
+</head>
 
-  <body>
+<body>
 
-    <header>
-      <div class="container">
+<header>
+    <div class="container">
         <h1>COPPA</h1>
+
         <h2>Universal Windows Platform documentation</h2>
 
         <section id="downloads">
-          <a href="index.html" class="btn">Home</a>
-          <a href="bb10.html" class="btn">BB10</a>
-          <a href="ios.html" class="btn">iOS</a>
-          <a href="java.html" class="btn">Java</a>
-          <a href="web.html" class="btn">JS</a>
+            <a href="index.html" class="btn">Home</a>
+            <a href="bb10.html" class="btn">BB10</a>
+            <a href="ios.html" class="btn">iOS</a>
+            <a href="java.html" class="btn">Java</a>
+            <a href="web.html" class="btn">JS</a>
         </section>
-      </div>
-    </header>
+    </div>
+</header>
 
-    <div class="container">
+<div class="container">
+    <table>
+        <tr>
+            <th>Class</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td style="font-weight: bold;"><a href="#CalendarUtils">DateTimeExtensions</a></td>
+            <td>Simple calendar utility methods</td>
+        </tr>
+        <tr>
+            <td style="font-weight: bold;"><a href="#DateTimeExtensions">DateTimeExtensions</a></td>
+            <td>Extensions to the DateTime class</td>
+        </tr>
+        <tr>
+            <td style="font-weight: bold;"><a href="#COPPA">COPPA</a></td>
+            <td>COPPA age check methods</td>
+        </tr>
+    </table>
+</div>
+<p>
+    <a name="COPPA"></a>
 
+<div class="container">
+    <h2>Class COPPA</h2>
+    COPPA age check methods
+    <h3>Method Detail</h3>
+
+    <div class="method_detail">
+        <a name="AgeMeetsCOPPARequirements-DateTime-"></a>
+        <h4>AgeMeetsCOPPARequirements</h4>
+        <pre>public static&nbsp;bool&nbsp;AgeMeetsCOPPARequirements(DateTime&nbsp;birthdate)</pre>
+        <div class="block">Is a user with the provided birthday old enough to meet COPPA requirements?</div>
+        <dl>
+            <dt><span class="paramLabel">Parameters:</span></dt>
+            <dd><code>birthdate</code> - the user's birth date as a <a href="https://msdn.microsoft.com/en-us/library/system.datetime(v=vs.110).aspx" target="_blank"><code>DateTime</code></a> instance.</dd>
+            <dt><span class="returnLabel">Returns:</span></dt>
+            <dd><code>true</code> if the user is old enough and <code>false</code> otherwise.</dd>
+        </dl>
     </div>
 
-  </body>
+    <div class="method_detail">
+        <a name="AgeMeetsCOPPARequirements-long-"></a>
+        <h4>AgeMeetsCOPPARequirements</h4>
+        <pre>public static&nbsp;bool&nbsp;AgeMeetsCOPPARequirements(long&nbsp;birthdate)</pre>
+        <div class="block">Is a user with the provided birthday old enough to meet COPPA requirements?</div>
+        <dl>
+            <dt><span class="paramLabel">Parameters:</span></dt>
+            <dd><code>birthdate</code> - the user's birth date as milliseconds since midnight January 1, 1970 UTC</dd>
+            <dt><span class="returnLabel">Returns:</span></dt>
+            <dd><code>true</code> if the user is old enough and <code>false</code> otherwise.</dd>
+        </dl>
+    </div>
+
+    <div class="method_detail">
+        <a name="AgeMeetsCOPPARequirements-String-"></a>
+        <!-- public static bool AgeMeetsCOPPARequirements (string yyyymmdd) -->
+        <h4>AgeMeetsCOPPARequirements</h4>
+        <pre>public static&nbsp;bool&nbsp;AgeMeetsCOPPARequirements(string&nbsp;yyyymmdd)</pre>
+        <div class="block">Is a user with the provided birthday old enough to meet COPPA requirements?</div>
+        <dl>
+            <dt><span class="paramLabel">Parameters:</span></dt>
+            <dd><code>yyyymmdd</code> - the user's birth date as a date string in yyyyMMdd format (e.g. 19990912 for
+                September 12, 1999)
+            </dd>
+            <dt><span class="returnLabel">Returns:</span></dt>
+            <dd><code>true</code> if the user is old enough and <code>false</code> otherwise.</dd>
+        </dl>
+    </div>
+</div>
+</p>
+
+<p>
+    <a name="DateTimeExtensions"></a>
+
+<div class="container">
+    <h2>Class DateTimeExtensions</h2>
+    Extension methods to the <a href="https://msdn.microsoft.com/en-us/library/system.datetime(v=vs.110).aspx" target="_blank"><code>DateTime</code></a> class
+    <h3>Method Detail</h3>
+
+    <div class="method_detail">
+        <a name="AsMilliseconds-DateTime-"></a>
+        <!-- public static long AsMilliseconds (this DateTime value) -->
+        <h4>AsMilliseconds</h4>
+        <pre>public&nbsp;long&nbsp;AsMilliseconds()</pre>
+        <div class="block"><code>DateTime</code> extension method. Calculates the number of milliseconds between midnight January 1, 1970 and the <code>this</code> <a href="https://msdn.microsoft.com/en-us/library/system.datetime(v=vs.110).aspx" target="_blank"><code>DateTime</code></a> instance.</div>
+        <dl>
+            <dt><span class="returnLabel">Returns:</span></dt>
+            <dd>Number of milliseconds between the date/time denoted by this DateTime instance and midnight Jan 1 1970.</dd>
+        </dl>
+    </div>
+
+    <div class="method_detail">
+        <a name="AsYYYYMMDD-DateTime-"></a>
+        <!-- public static string AsYYYYMMDD (this DateTime value) -->
+        <h4>AsYYYYMMDD</h4>
+        <pre>public&nbsp;string&nbsp;AsYYYYMMDD()</pre>
+        <div class="block"><code>DateTime</code> extension method. Converts <code>this</code> <a href="https://msdn.microsoft.com/en-us/library/system.datetime(v=vs.110).aspx" target="_blank"><code>DateTime</code></a> instance to a yyyyMMdd string.</div>
+        <dl>
+            <dt><span class="returnLabel">Returns:</span></dt>
+            <dd>String representaion of the date in yyyyMMdd.</dd>
+        </dl>
+    </div>
+
+    <div class="method_detail">
+        <a name="GetAge-DateTime-"></a>
+        <!-- public static int GetAge (this DateTime birthdate) -->
+        <h4>AsYYYYMMDD</h4>
+        <pre>public&nbsp;int&nbsp;GetAge()</pre>
+        <div class="block"><code>DateTime</code> extension method. Calculates the age corresponding to a birth date in <code>this</code> <a href="https://msdn.microsoft.com/en-us/library/system.datetime(v=vs.110).aspx" target="_blank"><code>DateTime</code></a> instance.</div>
+        <dl>
+            <dt><span class="returnLabel">Returns:</span></dt>
+            <dd>Calculated age.</dd>
+        </dl>
+    </div>
+</div>
+</p>
+
+<p>
+    <a name="CalendarUtils"></a>
+
+<div class="container">
+    <h2>Class DateTimeExtensions</h2>
+    Simple calendar utility methods
+
+    <h3>Method Detail</h3>
+
+    <div class="method_detail">
+        <a name="FromMillis-long-"></a>
+        <!-- public static DateTime FromMillis (long millis) -->
+        <h4>FromMillis</h4>
+        <pre>public static&nbsp;DateTime&nbsp;FromMillis(long&nbsp;millis)</pre>
+        <div class="block">Creates a <a href="https://msdn.microsoft.com/en-us/library/system.datetime(v=vs.110).aspx" target="_blank"><code>DateTime</code></a> instance given the number of milliseconds since midnight Jan 1 1970.</div>
+        <dl>
+            <dt><span class="paramLabel">Parameters:</span></dt>
+            <dd><code>millis</code> - Number of milliseconds since midnight Jan 1 1970.</dd>
+            <dt><span class="returnLabel">Returns:</span></dt>
+            <dd>A <a href="https://msdn.microsoft.com/en-us/library/system.datetime(v=vs.110).aspx" target="_blank"><code>DateTime</code></a> instance corresponding to given millis.</dd>
+        </dl>
+    </div>
+
+    <div class="method_detail">
+        <a name="FromString-String-"></a>
+        <!-- public static DateTime FromString (string yyyymmdd) -->
+        <h4>FromString</h4>
+        <pre>public static&nbsp;DateTime&nbsp;FromString(string&nbsp;yyyymmdd)</pre>
+        <div class="block">Converts a yyyyMMdd string to a calendar instance</div>
+        <dl>
+            <dt><span class="paramLabel">Parameters:</span></dt>
+            <dd><code>yyyymmdd</code> - date string in yyyyMMdd format</dd>
+            <dt><span class="returnLabel">Returns:</span></dt>
+            <dd>the corresponding Calendar instance</dd>
+            <dt><span class="throwsLabel">Throws:</span></dt>
+            <dd><code>ArgumentException</code> - if the string is in invalid format.</dd>
+            <dd><code>ArgumentNullException</code> - if the input string is <code>null</code>.</dd>
+        </dl>
+    </div>
+
+</div>
+</p>
+</body>
 </html>

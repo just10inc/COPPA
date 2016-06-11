@@ -1,36 +1,60 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
 
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+    <link rel="stylesheet" type="text/css" href="stylesheets/j10.css" media="screen">
 
     <title>COPPA by Just10 Inc. JS documentation</title>
-  </head>
+</head>
 
-  <body>
+<body>
 
-    <header>
-      <div class="container">
+<header>
+    <div class="container">
         <h1>COPPA</h1>
+
         <h2>Javascript documentation</h2>
 
         <section id="downloads">
-          <a href="index.html" class="btn">Home</a>
-          <a href="bb10.html" class="btn">BB10</a>
-          <a href="ios.html" class="btn">iOS</a>
-          <a href="java.html" class="btn">Java</a>
-          <a href="uwp.html" class="btn">UWP</a>
+            <a href="index.html" class="btn">Home</a>
+            <a href="bb10.html" class="btn">BB10</a>
+            <a href="ios.html" class="btn">iOS</a>
+            <a href="java.html" class="btn">Java</a>
+            <a href="uwp.html" class="btn">UWP</a>
         </section>
-      </div>
-    </header>
+    </div>
+</header>
+
+<div class="container">
+    <p>
+        <a name="COPPA"></a>
 
     <div class="container">
+        <h2>COPPA object</h2>
+        COPPA age check method
+        <h3>Method Detail</h3>
 
+        <div class="method_detail">
+            <a name="COPPA-ageMeetsCOPPARequirements-java.util.Calendar-"></a>
+            <h4>COPPA.ageMeetsCOPPARequirements</h4>
+            <pre>function&nbsp;COPPA.ageMeetsCOPPARequirements(java.util.Calendar&nbsp;birthdate)</pre>
+            <div class="block">Is a user with the provided birthday old enough to meet COPPA requirements?</div>
+            <dl>
+                <dt><span class="paramLabel">Parameters:</span></dt>
+                <dd><code>birthdate</code> - the user's birth date as anything that can be parsed into a
+                    <a href="http://www.w3schools.com/jsref/jsref_obj_date.asp" target="_blank">
+                        <code>Date</code></a> object via the <a href="http://www.w3schools.com/jsref/jsref_parse.asp" target="_blank"><code>Date.parse()</code></a> method.</dd>
+                <dt><span class="returnLabel">Returns:</span></dt>
+                <dd><code>true</code> if the user is old enough and <code>false</code> otherwise.</dd>
+            </dl>
+        </div>
     </div>
+    </p>
+</div>
 
-  </body>
+</body>
 </html>

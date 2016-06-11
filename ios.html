@@ -1,36 +1,170 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
 
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+    <link rel="stylesheet" type="text/css" href="stylesheets/j10.css" media="screen">
 
     <title>COPPA by Just10 Inc. Objective-C documentation</title>
-  </head>
+</head>
 
-  <body>
+<body>
 
-    <header>
-      <div class="container">
+<header>
+    <div class="container">
         <h1>COPPA</h1>
+
         <h2>Objective-C documentation</h2>
 
         <section id="downloads">
-          <a href="index.html" class="btn">Home</a>
-          <a href="bb10.html" class="btn">BB10</a>
-          <a href="java.html" class="btn">Java</a>
-          <a href="uwp.html" class="btn">UWP</a>
-          <a href="web.html" class="btn">JS</a>
+            <a href="index.html" class="btn">Home</a>
+            <a href="bb10.html" class="btn">BB10</a>
+            <a href="java.html" class="btn">Java</a>
+            <a href="uwp.html" class="btn">UWP</a>
+            <a href="web.html" class="btn">JS</a>
         </section>
-      </div>
-    </header>
+    </div>
+</header>
 
-    <div class="container">
+<div class="container">
+    <table>
+        <tr>
+            <th>Class</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td style="font-weight: bold;"><a href="#COPPA"><code>COPPA</code></a></td>
+            <td>COPPA age check functions</td>
+        </tr>
+        <tr>
+            <td style="font-weight: bold;"><a href="#COPPAExtensions"><code>COPPAExtensions</code> for <code>NSDate</code></a></td>
+            <td>Simple calendar utility functions</td>
+        </tr>
+    </table>
+</div>
 
+<p>
+    <a name="COPPA" ></a>
+
+<div class="container">
+    <h2>Class COPPA</h2>
+
+    <h3>Header File</h3>
+    <code>#include &lt;COPPA.h&gt;</code>
+
+    <h3>Method Detail</h3>
+
+    <div class="method_detail">
+        <!-- + (bool) ageMeetsCOPPARequirementsWithDate: (NSDate *) birthdate; -->
+        <a name="ageMeetsCOPPARequirementsWithDate"></a>
+        <h4>ageMeetsCOPPARequirementsWithDate</h4>
+        <pre>+&nbsp;(bool)&nbsp;ageMeetsCOPPARequirementsWithDate:&nbsp;(NSDate*)&nbsp;birthdate</pre>
+        <div class="block">Is a user with the provided birthday old enough to meet COPPA requirements?</div>
+        <dl>
+            <dt><span class="paramLabel">Parameters:</span></dt>
+            <dd><code>birthdate</code> - the user's birth date as an <a href="https://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/Classes/NSDate_Class/" target="_blank"><code>NSDate</code></a> instance.</dd>
+            <dt><span class="returnLabel">Returns:</span></dt>
+            <dd><code>true</code> if the user is old enough and <code>false</code> otherwise.</dd>
+        </dl>
     </div>
 
-  </body>
+    <div class="method_detail">
+        <!-- + (bool) ageMeetsCOPPARequirementsWithSeconds: (long) secondsFromEpoch; -->
+        <a name="ageMeetsCOPPARequirementsWithSeconds"></a>
+        <h4>ageMeetsCOPPARequirementsWithSeconds</h4>
+        <pre>+&nbsp;(bool)&nbsp;ageMeetsCOPPARequirementsWithSeconds:&nbsp;(long)&nbsp;secondsFromEpoch</pre>
+        <div class="block">Is a user with the provided birthday old enough to meet COPPA requirements?</div>
+        <dl>
+            <dt><span class="paramLabel">Parameters:</span></dt>
+            <dd><code>secondsFromEpoch</code> - the user's birth date as the number of seconds from midnight, January 1 1970.</dd>
+            <dt><span class="returnLabel">Returns:</span></dt>
+            <dd><code>true</code> if the user is old enough and <code>false</code> otherwise.</dd>
+        </dl>
+    </div>
+
+    <div class="method_detail">
+        <!-- + (bool) ageMeetsCOPPARequirementsWithYYYYMMdd: (NSString *) birthdate -->
+        <a name="ageMeetsCOPPARequirementsWithYYYYMMdd"></a>
+        <h4>ageMeetsCOPPARequirementsWithYYYYMMdd</h4>
+        <pre>+&nbsp;(bool)&nbsp;ageMeetsCOPPARequirementsWithYYYYMMdd:&nbsp;(NSString*)&nbsp;birthdate</pre>
+        <div class="block">Is a user with the provided birthday old enough to meet COPPA requirements?</div>
+        <dl>
+            <dt><span class="paramLabel">Parameters:</span></dt>
+            <dd><code>birthdate</code> - the user's birth date as an <code>NSString</code> in yyyyMMdd format (e.g. 19990912 for
+                September 12, 1999).</dd>
+            <dt><span class="returnLabel">Returns:</span></dt>
+            <dd><code>true</code> if the user is old enough and <code>false</code> otherwise.</dd>
+        </dl>
+    </div>
+</div>
+</p>
+
+<p>
+    <a name="COPPAExtensions" ></a>
+
+<div class="container">
+    <h2>COPPAExtensions for NSDate</h2>
+    Simple calendar utility functions
+
+    <h3>Header File</h3>
+    <code>#include &lt;NSDate_COPPAExtensions.h&gt;</code>
+
+    <h3>Method Detail</h3>
+
+    <div class="method_detail">
+        <a name="calculateAge-"></a>
+        <h4>calculateAge</h4>
+        <pre>-&nbsp;(NSInteger)&nbsp;calculateAge</pre>
+        <div class="block">Calculates the age corresponding to the birth date stored in the <code>self</code> instance.</div>
+        <dl>
+            <dt><span class="returnLabel">Returns:</span></dt>
+            <dd>calculated age</dd>
+        </dl>
+    </div>
+
+    <div class="method_detail">
+        <a name="currentCalendar-"></a>
+        <h4>currentCalendar</h4>
+        <pre>+&nbsp;(NSCalendar&nbsp;*)&nbsp;currentCalendar</pre>
+        <div class="block">A localized instance of <a href="https://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/Classes/NSCalendar_Class/" target="_blank"><code>NSCalendar</code></a>.</div>
+        <dl>
+            <dt><span class="returnLabel">Returns:</span></dt>
+            <dd>An instance of <a href="https://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/Classes/NSCalendar_Class/" target="_blank"><code>NSCalendar</code></a> configured with the device's current locale.</dd>
+        </dl>
+    </div>
+
+    <div class="method_detail">
+        <!-- + (NSDate*) fromString: (NSString*) yyyyMMdd -->
+        <a name="fromString-NSString-"></a>
+        <h4>fromString</h4>
+        <pre>+&nbsp;(NSDate*)&nbsp;fromString:&nbsp;(NSString*)&nbsp;yyyymmdd</pre>
+        <div class="block">Converts a yyyyMMdd string to a <a href="https://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/Classes/NSDate_Class/" target="_blank"><code>NSDate</code></a> instance</div>
+        <dl>
+            <dt><span class="paramLabel">Parameters:</span></dt>
+            <dd><code>yyyymmdd</code> - date string in yyyyMMdd format</dd>
+            <dt><span class="returnLabel">Returns:</span></dt>
+            <dd>An <a href="https://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/Classes/NSDate_Class/" target="_blank"><code>NSDate</code></a> instance corresponding to the provided date string.</dd>
+            <dt><span class="throwsLabel">Throws:</span></dt>
+            <dd><code>NSException</code> - if the string contains non numerics, contains an invalid date string, or is in an incorrect format</dd>
+        </dl>
+    </div>
+
+    <div class="method_detail">
+        <!-- - (NSString*) toyyyyMMdd; -->
+        <a name="toyyyyMMdd-"></a>
+        <h4>toyyyyMMdd</h4>
+        <pre>-&nbsp;(NSString*)&nbsp;toyyyyMMdd</pre>
+        <div class="block">Converts the <code>self</code> instance to a string in yyyyMMdd date string</div>
+        <dl>
+            <dt><span class="returnLabel">Returns:</span></dt>
+            <dd>A yyyyMMdd string representation of the <code>self</code> instance.</dd>
+        </dl>
+    </div>
+</div>
+</p>
+
+</body>
 </html>
