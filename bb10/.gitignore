@@ -1,5 +1,7 @@
 */arm
+*/arm-p
 */x86
+*/x86-p
 .assets.index
 *.pri
 
