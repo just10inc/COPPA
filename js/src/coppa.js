@@ -28,5 +28,5 @@ COPPA.ageMeetsCOPPARequirements = function (birthdate) {
 
     var latestAllowed = new Date();
     latestAllowed.setYear(latestAllowed.getUTCFullYear() - MINIMUM_AGE);
-    return dob <= latestAllowed;
+    return dob.getTime() <= latestAllowed.getTime();
 };
