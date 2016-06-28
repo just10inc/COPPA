@@ -6,6 +6,9 @@
 .DS_Store
 ._*
 
+## Releases folder
+releases
+
 ## Build generated
 build/
 DerivedData/

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C103061D1D1891E700EEFEF7 /* NSDate_COPPAExtensions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C1A3A3541D05F11400457BD4 /* NSDate_COPPAExtensions.h */; };
 		C18673441D02364D0028F091 /* COPPA.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C18673431D02364D0028F091 /* COPPA.h */; };
 		C18673461D02364D0028F091 /* COPPA.m in Sources */ = {isa = PBXBuildFile; fileRef = C18673451D02364D0028F091 /* COPPA.m */; };
 		C18673531D0236E30028F091 /* DateExtensionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C18673521D0236E30028F091 /* DateExtensionsTests.m */; };
@@ -35,6 +36,7 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				C103061D1D1891E700EEFEF7 /* NSDate_COPPAExtensions.h in CopyFiles */,
 				C18673441D02364D0028F091 /* COPPA.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -314,6 +316,7 @@
 		C186734A1D02364D0028F091 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -323,6 +326,7 @@
 		C186734B1D02364D0028F091 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
