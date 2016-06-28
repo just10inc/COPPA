@@ -4,6 +4,7 @@
 
 # MacOSX junk
 .DS_Store
+._*
 
 ## Build generated
 build/

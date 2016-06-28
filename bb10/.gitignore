@@ -1,6 +1,7 @@
 */arm
 */x86
 .assets.index
+*.pri
 
 # generated build output
 *.o
@@ -9,6 +10,7 @@
 
 #BB10 simulator junk
 sim_*
+192.168.*
 
 # BB10 config dirs
 */Device-Debug
