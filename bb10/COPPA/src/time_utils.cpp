@@ -13,7 +13,7 @@
  See the License for the specific language governing permissions and
  limitations under the License.
  */
- 
+
 /*
  * time_utils.cpp
  *
@@ -57,24 +57,6 @@ namespace just10
                     throw "Invalid date input";
 
                 return result;
-            }
-
-            int getAge(const QDate &birthdate)
-            {
-                const QDate now = today();
-
-                const int birthYear = birthdate.year();
-                const int birthMonth = birthdate.month();
-                const int birthDay = birthdate.day();
-
-                const int thisYear = now.year();
-                const int thisMonth = now.month();
-                const int thisDay = now.day();
-
-                const bool notReachedBDThisYear = (birthMonth > thisMonth
-                        || (birthMonth == thisMonth && birthDay > thisDay));
-
-                return thisYear - birthYear - (notReachedBDThisYear ? 1 : 0);
             }
         }
     }

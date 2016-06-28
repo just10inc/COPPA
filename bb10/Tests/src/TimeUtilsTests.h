@@ -25,9 +25,6 @@ private slots:
     void testInvalidQDateFromStringThrows ();
     void testQDateFromTooShortString ();
     void testQDateFromTooLongString ();
-    void testBornTodayIsZeroAged ();
-    void testBornNowIsZeroAged ();
-    void testAgesByAddedDates();
 public:
     explicit TimeUtilsTests() : QTestSuite() {};
     virtual const char * Name();

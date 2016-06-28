@@ -73,30 +73,3 @@ void TimeUtilsTests::testInvalidQDateFromStringThrows () {
     EXPECT_THROW(fromYYYYMMDD("20161899"), const char*);
 }
 
-void TimeUtilsTests::testBornTodayIsZeroAged()
-{
-    QVERIFY(0 == getAge((const QDate)today()));
-}
-
-void TimeUtilsTests::testBornNowIsZeroAged()
-{
-    QVERIFY(0 == getAge((const QDate)now().date()));
-}
-
-void TimeUtilsTests::testAgesByAddedDates()
-{
-    QVERIFY(0 == getAge(today()));
-    QVERIFY(0 == getAge(moveDate(0, -3, 1)));
-    QVERIFY(0 == getAge(moveDate(0, 0, -11)));
-    QVERIFY(0 == getAge(moveDate(-1, 0, 1)));
-    QVERIFY(-1 == getAge(moveDate(0, 0, 10)));
-    QVERIFY(1 == getAge(moveDate(-1, 0, 0)));
-    QVERIFY(4 == getAge(moveDate(-5, 0, 1)));
-    QVERIFY(5 == getAge(moveDate(-5, 0, 0)));
-    QVERIFY(5 == getAge(moveDate(-5, -2, 0)));
-    QVERIFY(12 == getAge(moveDate(-12, -6, -10)));
-    QVERIFY(12 == getAge(moveDate(-12, -6, 10)));
-    QVERIFY(13 == getAge(moveDate(-14, 0, 1)));
-    QVERIFY(14 == getAge(moveDate(-14, 0, 0)));
-    QVERIFY(200 == getAge(moveDate(-200, 0, -20)));
-}

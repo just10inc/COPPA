@@ -36,7 +36,13 @@ const NSInteger MINIMUM_AGE = 14;
 }
 
 + (bool) ageMeetsCOPPARequirementsWithDate: (NSDate *) birthdate {
-    return [birthdate calculateAge] >= MINIMUM_AGE;
+    NSCalendar* cal = [NSCalendar currentCalendar];
+    NSDateComponents* dc = [[NSDateComponents alloc] init];
+    [dc setYear: -MINIMUM_AGE];
+
+    NSComparisonResult compared = [birthdate compare:[cal dateByAddingComponents:dc toDate:[NSDate date] options:NSCalendarWrapComponents]];
+    
+    return compared == NSOrderedSame || compared == NSOrderedAscending;
 }
 
 + (bool) ageMeetsCOPPARequirementsWithYYYYMMdd: (NSString *) birthdate {

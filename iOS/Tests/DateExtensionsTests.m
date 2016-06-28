@@ -41,31 +41,12 @@
     [super tearDown];
 }
 
-- (void)testTodayZeroAge {
-    XCTAssertEqual(0, [[NSDate date] calculateAge]);
-}
-
 -(void) assertDate:(NSDate*) date hasYear:(int)year hasMonth: (int)month hasDay:(int)day {
     NSDateComponents* c = [[NSDate currentCalendar] components:DEFAULT_DATE_COMPONENTS fromDate:date];
     
     XCTAssertEqual(year, [c year]);
     XCTAssertEqual(month, [c month]);
     XCTAssertEqual(day, [c day]);
-}
-
-- (void)testAgesByAddDates {
-    XCTAssertEqual ( 0, [[TestUtils moveDateByYears:0 Months:0 Days:0] calculateAge]);
-    XCTAssertEqual ( 0, [[TestUtils moveDateByYears:0 Months:-3 Days:1] calculateAge]);
-    XCTAssertEqual ( 0, [[TestUtils moveDateByYears:-1 Months:0 Days:1] calculateAge]);
-    XCTAssertEqual ( -1, [[TestUtils moveDateByYears:0 Months:0 Days:10] calculateAge]);
-    XCTAssertEqual ( 1, [[TestUtils moveDateByYears:-1 Months:0 Days:0] calculateAge]);
-    XCTAssertEqual ( 4, [[TestUtils moveDateByYears:-5 Months:0 Days:1] calculateAge]);
-    XCTAssertEqual ( 5, [[TestUtils moveDateByYears:-5 Months:0 Days:0] calculateAge]);
-    XCTAssertEqual ( 5, [[TestUtils moveDateByYears:-5 Months:-2 Days:0] calculateAge]);
-    XCTAssertEqual ( 10, [[TestUtils moveDateByYears:-10 Months:-2 Days:-10] calculateAge]);
-    XCTAssertEqual ( 13, [[TestUtils moveDateByYears:-14 Months:0 Days:1] calculateAge]);
-    XCTAssertEqual ( 14, [[TestUtils moveDateByYears:-14 Months:0 Days:0] calculateAge]);
-    XCTAssertEqual ( 200, [[TestUtils moveDateByYears:-200 Months:0 Days:-2] calculateAge]);
 }
 
 - (void)testDateFromStringParsesCorrectly {

@@ -21,19 +21,19 @@ import java.util.Calendar;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
-import static com.just10.coppa.CalendarUtils.now;
+import static com.just10.coppa.CalendarUtils.today;
 
 /**
  Created by mahramf on 2016-05-31.
  */
 @NoArgsConstructor (access = AccessLevel.PRIVATE)
 public class TestUtils {
-    private static final SimpleDateFormat FORMATTER = new SimpleDateFormat ("yyyyMMdd");
+    private static final SimpleDateFormat FORMATTER = new SimpleDateFormat (COPPA.DATE_STRING_FORMAT);
 
     /**
-     @param cal
+     @param cal date
 
-     @return
+     @return yyyyMMdd format of the date
      */
     static String toyyyyMMdd (final Calendar cal) {
         return FORMATTER.format (cal.getTime ());
@@ -62,12 +62,12 @@ public class TestUtils {
 
     /**
      Moves today's date by the given year, month, and day values.
-     @param years
-     @param months
-     @param days
-     @return
+     @param years number of years by which to move the date
+     @param months number of months by which to move the date
+     @param days number of days by which to move the date
+     @return the moved date
      */
     static Calendar moveDate (int years, int months, int days) {
-        return moveDate (now (), years, months, days);
+        return moveDate (today (), years, months, days);
     }
 }

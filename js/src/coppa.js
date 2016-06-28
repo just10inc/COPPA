@@ -26,16 +26,7 @@ COPPA.ageMeetsCOPPARequirements = function (birthdate) {
     if (isNaN(dob))
         throw "Invalid birthdate provided: '" + birthdate + "'";
 
-    var today = new Date();
-
-    var age = today.getUTCFullYear() - dob.getUTCFullYear();
-
-    var birthMonth = dob.getUTCMonth();
-    var thisMonth = today.getUTCMonth();
-
-    if (birthMonth > thisMonth || (birthMonth == thisMonth && dob.getUTCDate() > today.getUTCDate())) {
-        age--;
-    }
-
-    return age >= MINIMUM_AGE;
+    var latestAllowed = new Date();
+    latestAllowed.setYear(latestAllowed.getUTCFullYear() - MINIMUM_AGE);
+    return dob <= latestAllowed;
 };

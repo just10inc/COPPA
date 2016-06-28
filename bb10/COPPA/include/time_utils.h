@@ -30,8 +30,6 @@ namespace just10
             QDate today();
 
             QDate fromYYYYMMDD (const QString& yyyymmdd);
-
-            int getAge(const QDate &birthdate);
         }
     }
 }

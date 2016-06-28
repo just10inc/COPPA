@@ -13,7 +13,7 @@
  See the License for the specific language governing permissions and
  limitations under the License.
  */
- 
+
  /*
  * coppa.cpp
  *
@@ -39,7 +39,7 @@ namespace just10
 
         bool ageMeetsCOPPARequirements(const QDate &birthdate)
         {
-            return util::getAge(birthdate) >= MINIMUM_AGE;
+            return birthdate <= util::today().addYears(-MINIMUM_AGE);
         }
 
         bool ageMeetsCOPPARequirements(const qint64 birthdate)

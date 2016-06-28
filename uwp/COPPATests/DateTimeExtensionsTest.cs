@@ -64,32 +64,6 @@ namespace Just10
         }
 
         [TestMethod]
-        public void TestTodayZeroAge ()
-        {
-            Assert.AreEqual (0, DateTime.Today.GetAge ());
-            Assert.AreEqual (0, DateTime.Now.GetAge ());
-        }
-
-        [TestMethod]
-        public void TestAgesByAddDates ()
-        {
-            var today = DateTime.Now;
-            Assert.AreEqual (0, today.AddMonths(-3).AddDays(1).GetAge ());
-            Assert.AreEqual (0, today.AddYears(0).GetAge ());
-            Assert.AreEqual (0, today.AddDays (-10).GetAge ());
-            Assert.AreEqual (-1, today.AddDays (10).GetAge ());
-            Assert.AreEqual (1, today.AddYears (-1).GetAge ());
-            Assert.AreEqual (4, today.AddYears (-5).AddDays (1).GetAge ());
-            Assert.AreEqual (5, today.AddYears (-5).GetAge ());
-            Assert.AreEqual (5, today.AddYears (-5).AddMonths (-2).GetAge ());
-            Assert.AreEqual (12, today.AddYears (-12).AddMonths (-6).AddDays (-10).GetAge ());
-            Assert.AreEqual (12, today.AddYears (-12).AddMonths (-6).AddDays (10).GetAge ());
-            Assert.AreEqual (13, today.AddYears (-14).AddDays(1).GetAge ());
-            Assert.AreEqual (14, today.AddYears (-14).GetAge ());
-            Assert.AreEqual (200, today.AddYears (-200).AddDays (-20).GetAge ());
-        }
-
-        [TestMethod]
         public void TestFromString ()
         {
             AssertDatesEqualEnough (new DateTime (1979, 9, 22), DateTimeExtensions.FromString ("19790922"));

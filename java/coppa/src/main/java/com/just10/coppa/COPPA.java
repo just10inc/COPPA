@@ -15,14 +15,14 @@
  */
 package com.just10.coppa;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
 import static com.just10.coppa.CalendarUtils.fromString;
-import static com.just10.coppa.CalendarUtils.getAge;
+import static com.just10.coppa.CalendarUtils.setMidnight;
 
 /**
  * COPPA age check methods
@@ -31,7 +31,7 @@ import static com.just10.coppa.CalendarUtils.getAge;
 @NoArgsConstructor (access = AccessLevel.PRIVATE)
 public class COPPA {
     private static final int MINIMUM_AGE = 14;
-    private static final String DATE_STRING_FORMAT = "yyyymmdd";
+    static final String DATE_STRING_FORMAT = "yyyyMMdd";
 
     /**
      * Is a user with the provided birthday old enough to meet COPPA requirements?
@@ -40,9 +40,15 @@ public class COPPA {
      */
     public static boolean ageMeetsCOPPARequirements (final Calendar birthdate) {
         if (null == birthdate)
-            throw new NullPointerException ("birthdate");
+            throw new NullPointerException ("birthdate == null");
 
-        return getAge (birthdate) >= MINIMUM_AGE;
+        setMidnight (birthdate);
+
+        final Calendar lastAllowed = Calendar.getInstance ();
+        lastAllowed.add (Calendar.YEAR, -MINIMUM_AGE);
+        setMidnight (lastAllowed);
+
+        return birthdate.compareTo (lastAllowed) <= 0;
     }
 
     /**

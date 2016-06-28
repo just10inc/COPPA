@@ -35,7 +35,7 @@ namespace Just10
             if (birthdate == null)
                 throw new ArgumentNullException ("birthdate");
 
-            return birthdate.GetAge () >= MINIMUM_AGE;
+            return birthdate.CompareTo (DateTime.Today.AddYears(-MINIMUM_AGE)) <= 0;
         }
 
         /// <summary>

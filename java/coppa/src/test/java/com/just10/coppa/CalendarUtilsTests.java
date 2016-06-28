@@ -20,10 +20,8 @@ import org.junit.Test;
 import java.util.Calendar;
 
 import static com.just10.coppa.CalendarUtils.fromString;
-import static com.just10.coppa.TestUtils.moveDate;
 import static com.just10.coppa.CalendarUtils.now;
 import static com.just10.coppa.CalendarUtils.today;
-import static com.just10.coppa.CalendarUtils.getAge;
 import static org.junit.Assert.*;
 
 /**
@@ -51,31 +49,6 @@ public class CalendarUtilsTests {
         assertEquals (2179, date.get(Calendar.YEAR));
         assertEquals (Calendar.AUGUST, date.get(Calendar.MONTH));
         assertEquals (12, date.get(Calendar.DAY_OF_MONTH));
-    }
-
-    @Test
-    public void testTodayZeroAge ()
-    {
-        assertEquals (0, getAge (CalendarUtils.today ()));
-        assertEquals (0, getAge (CalendarUtils.now()));
-    }
-
-    @Test
-    public void testAgesByAddDates ()
-    {
-        assertEquals (0, getAge (moveDate (0, -3, 1)));
-        assertEquals (0, getAge (moveDate (0, 0, 0)));
-        assertEquals (0, getAge (moveDate (0, 0, -10)));
-        assertEquals (-1, getAge (moveDate (0, 0, 10)));
-        assertEquals (1, getAge (moveDate (-1, 0, 0)));
-        assertEquals (4, getAge (moveDate (-5, 0, 1)));
-        assertEquals (5, getAge (moveDate (-5, 0, 0)));
-        assertEquals (5, getAge (moveDate (-5, -2, 0)));
-        assertEquals (12, getAge (moveDate (-12, -6, -10)));
-        assertEquals (12, getAge (moveDate (-12, -6, 10)));
-        assertEquals (13, getAge (moveDate (-14, 0, 1)));
-        assertEquals (14, getAge (moveDate (-14, 0, 0)));
-        assertEquals (200, getAge (moveDate (-200, 0, -20)));
     }
 
     @Test

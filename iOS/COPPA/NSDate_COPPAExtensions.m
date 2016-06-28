@@ -63,24 +63,6 @@ const NSString* YYYYMMDD_FORMAT = @"yyyyMMdd";
     return date;
 }
 
-- (NSInteger) calculateAge {
-    NSCalendar* cal = [NSCalendar currentCalendar];
-    NSDateComponents* today = [cal components:DEFAULT_DATE_COMPONENTS fromDate:[NSDate date]];
-    NSDateComponents* birthdate = [cal components:DEFAULT_DATE_COMPONENTS fromDate:self];
-    
-    const NSInteger birthYear = [birthdate year];
-    const NSInteger birthMonth = [birthdate month];
-    const NSInteger birthDay = [birthdate day];
-    const NSInteger thisYear = [today year];
-    const NSInteger thisMonth = [today month];
-    const NSInteger thisDay = [today day];
-    
-    const bool notReachedBDThisYear = (birthMonth > thisMonth ||
-                                       (birthMonth == thisMonth && birthDay > thisDay));
-    
-    return thisYear - birthYear - (notReachedBDThisYear ? 1 : 0);
-}
-
 - (NSString*) toyyyyMMdd {
     return [[NSDate yyyyMMddFormatter] stringFromDate:self];
 }

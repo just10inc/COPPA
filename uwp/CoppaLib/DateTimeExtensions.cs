@@ -57,18 +57,6 @@ namespace Just10
         }
 
         /// <summary>
-        /// Gets the age associated with the birthday being the value of this DateTime object
-        /// </summary>
-        /// <param name="birthdate">Birth date</param>
-        /// <returns>The age, in years</returns>
-        public static int GetAge (this DateTime birthdate)
-        {
-            var today = DateTime.Today;
-            bool notReachedBDThisYear = (birthdate.Month > today.Month || (birthdate.Month == today.Month && birthdate.Day > today.Day));
-            return today.Year - birthdate.Year - (notReachedBDThisYear ? 1 : 0);
-        }
-
-        /// <summary>
         /// Convert this DateTime value to a unix style timestamp
         /// </summary>
         /// <param name="value">DateTime value</param>

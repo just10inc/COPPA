@@ -15,6 +15,19 @@
  */
 apply plugin: 'java'
 
+jar {
+ manifest {
+  baseName = 'j10-coppa'
+  version = '1.1.0'
+  classifier = 'java'
+  excludes = ['generated/**']
+
+  attributes('Specification-Title': 'COPPA',
+          'Specification-Version': "$version",
+          'Specification-Vendor': 'Just10 Inc.');
+ }
+}
+
 dependencies {
     compile  "org.projectlombok:lombok:1.16.8"
     testCompile 'junit:junit:4.12'

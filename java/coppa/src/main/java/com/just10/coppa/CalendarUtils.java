@@ -22,25 +22,6 @@ import java.util.Calendar;
  * @author Mahram Z. Foadi
  */
 public class CalendarUtils {
-    /**
-     Calculates the age corresponding to the provided birthdate
-     @param birthdate birthdate
-     @return calculated age
-     */
-    public static int getAge (final Calendar birthdate) {
-        final Calendar today = today ();
-
-        final int birthYear = birthdate.get (Calendar.YEAR);
-        final int birthMonth = birthdate.get (Calendar.MONTH);
-        final int birthDay = birthdate.get (Calendar.DAY_OF_MONTH);
-        
-        final int thisYear = today.get (Calendar.YEAR);
-        final int thisMonth = today.get (Calendar.MONTH);       
-        final int thisDay = today.get (Calendar.DAY_OF_MONTH);
-
-        final boolean notReachedBDThisYear = (birthMonth > thisMonth || (birthMonth == thisMonth && birthDay > thisDay));
-        return thisYear - birthYear - (notReachedBDThisYear ? 1 : 0);
-    }
 
     /**
      Converts a yyyyMMdd string to a calendar instance
@@ -61,7 +42,7 @@ public class CalendarUtils {
 
     /**
      Gets the current time
-     @return
+     @return current time
      */
     static Calendar now () {
         return Calendar.getInstance ();
@@ -71,13 +52,15 @@ public class CalendarUtils {
      @return Gets a calendar instance pointing to 00:00:00 of current day
      */
     static Calendar today () {
-        final Calendar today = now ();
-        today.set (Calendar.HOUR, 0);
-        today.set (Calendar.MINUTE, 0);
-        today.set (Calendar.SECOND, 0);
-        today.set (Calendar.MILLISECOND, 0);
+        return setMidnight (now ());
+    }
 
-        return today;
+    static Calendar setMidnight (final Calendar date) {
+        date.set (Calendar.HOUR_OF_DAY, 0);
+        date.set (Calendar.MINUTE, 0);
+        date.set (Calendar.SECOND, 0);
+        date.set (Calendar.MILLISECOND, 0);
+        return date;
     }
 
     /**
@@ -95,6 +78,6 @@ public class CalendarUtils {
         cal.set (Calendar.MONTH, month - 1);
         cal.set (Calendar.DAY_OF_MONTH, day);
 
-        return cal;
+        return setMidnight (cal);
     }
 }
