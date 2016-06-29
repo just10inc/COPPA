@@ -31,7 +31,9 @@
 
 <div class="container">
     <p>
-        Documentation for the COPPA age check library for Java and Android. Download <a href="https://s3-us-west-2.amazonaws.com/coppa-lib/releases/j10-coppa-1.1.0.java.jar">here</a>.
+        Documentation for the COPPA age check library for Java and Android. Download <a
+            href="https://s3-us-west-2.amazonaws.com/coppa-lib/releases/j10-coppa-1.1.1-java.jar">here</a>. Scroll down
+        for <a href="#changelist">changelist</a>.
     </p>
 </div>
 
@@ -130,11 +132,37 @@
             <dt><span class="returnLabel">Returns:</span></dt>
             <dd>the corresponding Calendar instance</dd>
             <dt><span class="throwsLabel">Throws:</span></dt>
-            <dd><a href="https://docs.oracle.com/javase/7/docs/api/java/lang/NumberFormatException.html" target="_blank"><code>NumberFormatException</code></a> - if the string contains non numerics</dd>
-            <dd><a href="https://docs.oracle.com/javase/7/docs/api/java/lang/NullPointerException.html" target="_blank"><code>NullPointerException</code></a> - if the input string is <code>null</code></dd>
+            <dd><a href="https://docs.oracle.com/javase/7/docs/api/java/lang/NumberFormatException.html"
+                   target="_blank"><code>NumberFormatException</code></a> - if the string contains non numerics
+            </dd>
+            <dd><a href="https://docs.oracle.com/javase/7/docs/api/java/lang/NullPointerException.html" target="_blank"><code>NullPointerException</code></a>
+                - if the input string is <code>null</code></dd>
         </dl>
     </div>
 </div>
 </p>
+
+<a name="changelist"></a>
+
+<div class="container">
+    <h2>Changelist</h2>
+
+    <h4>1.1.1</h4>
+    <ul>
+        <li>Targetting Java 1.7 for Android compatibility</li>
+    </ul>
+
+    <h4>1.1.0</h4>
+    <ul>
+        <li>Simplified logic by replacing age calculation and check with minimum age check</li>
+        <li>Removed <code>getAge</code> Calendar utility method.</li>
+    </ul>
+
+    <h4>1.0.0</h4>
+    <ul>
+        <li>Initial release</li>
+    </ul>
+
+</div>
 </body>
 </html>

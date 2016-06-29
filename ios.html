@@ -31,7 +31,9 @@
 
 <div class="container">
     <p>
-Documentation for the COPPA age check library for iOS. Download <a href="https://s3-us-west-2.amazonaws.com/coppa-lib/releases/j10-coppa-1.1.0-ios.zip">here</a>.
+        Documentation for the COPPA age check library for iOS. Download <a
+            href="https://s3-us-west-2.amazonaws.com/coppa-lib/releases/j10-coppa-1.1.0-ios.zip">here</a>. Scroll down
+        for <a href="#changelist">changelist</a>.
     </p>
 </div>
 
@@ -46,14 +48,15 @@ Documentation for the COPPA age check library for iOS. Download <a href="https:/
             <td>COPPA age check functions</td>
         </tr>
         <tr>
-            <td style="font-weight: bold;"><a href="#COPPAExtensions"><code>COPPAExtensions</code> for <code>NSDate</code></a></td>
+            <td style="font-weight: bold;"><a href="#COPPAExtensions"><code>COPPAExtensions</code> for
+                <code>NSDate</code></a></td>
             <td>Simple calendar utility functions</td>
         </tr>
     </table>
 </div>
 
 <p>
-    <a name="COPPA" ></a>
+    <a name="COPPA"></a>
 
 <div class="container">
     <h2>Class COPPA</h2>
@@ -71,7 +74,10 @@ Documentation for the COPPA age check library for iOS. Download <a href="https:/
         <div class="block">Is a user with the provided birthday old enough to meet COPPA requirements?</div>
         <dl>
             <dt><span class="paramLabel">Parameters:</span></dt>
-            <dd><code>birthdate</code> - the user's birth date as an <a href="https://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/Classes/NSDate_Class/" target="_blank"><code>NSDate</code></a> instance.</dd>
+            <dd><code>birthdate</code> - the user's birth date as an <a
+                    href="https://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/Classes/NSDate_Class/"
+                    target="_blank"><code>NSDate</code></a> instance.
+            </dd>
             <dt><span class="returnLabel">Returns:</span></dt>
             <dd><code>true</code> if the user is old enough and <code>false</code> otherwise.</dd>
         </dl>
@@ -85,7 +91,9 @@ Documentation for the COPPA age check library for iOS. Download <a href="https:/
         <div class="block">Is a user with the provided birthday old enough to meet COPPA requirements?</div>
         <dl>
             <dt><span class="paramLabel">Parameters:</span></dt>
-            <dd><code>secondsFromEpoch</code> - the user's birth date as the number of seconds from midnight, January 1 1970.</dd>
+            <dd><code>secondsFromEpoch</code> - the user's birth date as the number of seconds from midnight, January 1
+                1970.
+            </dd>
             <dt><span class="returnLabel">Returns:</span></dt>
             <dd><code>true</code> if the user is old enough and <code>false</code> otherwise.</dd>
         </dl>
@@ -99,8 +107,10 @@ Documentation for the COPPA age check library for iOS. Download <a href="https:/
         <div class="block">Is a user with the provided birthday old enough to meet COPPA requirements?</div>
         <dl>
             <dt><span class="paramLabel">Parameters:</span></dt>
-            <dd><code>birthdate</code> - the user's birth date as an <code>NSString</code> in yyyyMMdd format (e.g. 19990912 for
-                September 12, 1999).</dd>
+            <dd><code>birthdate</code> - the user's birth date as an <code>NSString</code> in yyyyMMdd format (e.g.
+                19990912 for
+                September 12, 1999).
+            </dd>
             <dt><span class="returnLabel">Returns:</span></dt>
             <dd><code>true</code> if the user is old enough and <code>false</code> otherwise.</dd>
         </dl>
@@ -109,7 +119,7 @@ Documentation for the COPPA age check library for iOS. Download <a href="https:/
 </p>
 
 <p>
-    <a name="COPPAExtensions" ></a>
+    <a name="COPPAExtensions"></a>
 
 <div class="container">
     <h2>COPPAExtensions for NSDate</h2>
@@ -124,10 +134,16 @@ Documentation for the COPPA age check library for iOS. Download <a href="https:/
         <a name="currentCalendar-"></a>
         <h4>currentCalendar</h4>
         <pre>+&nbsp;(NSCalendar&nbsp;*)&nbsp;currentCalendar</pre>
-        <div class="block">A localized instance of <a href="https://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/Classes/NSCalendar_Class/" target="_blank"><code>NSCalendar</code></a>.</div>
+        <div class="block">A localized instance of <a
+                href="https://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/Classes/NSCalendar_Class/"
+                target="_blank"><code>NSCalendar</code></a>.
+        </div>
         <dl>
             <dt><span class="returnLabel">Returns:</span></dt>
-            <dd>An instance of <a href="https://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/Classes/NSCalendar_Class/" target="_blank"><code>NSCalendar</code></a> configured with the device's current locale.</dd>
+            <dd>An instance of <a
+                    href="https://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/Classes/NSCalendar_Class/"
+                    target="_blank"><code>NSCalendar</code></a> configured with the device's current locale.
+            </dd>
         </dl>
     </div>
 
@@ -136,14 +152,22 @@ Documentation for the COPPA age check library for iOS. Download <a href="https:/
         <a name="fromString-NSString-"></a>
         <h4>fromString</h4>
         <pre>+&nbsp;(NSDate*)&nbsp;fromString:&nbsp;(NSString*)&nbsp;yyyymmdd</pre>
-        <div class="block">Converts a yyyyMMdd string to a <a href="https://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/Classes/NSDate_Class/" target="_blank"><code>NSDate</code></a> instance</div>
+        <div class="block">Converts a yyyyMMdd string to a <a
+                href="https://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/Classes/NSDate_Class/"
+                target="_blank"><code>NSDate</code></a> instance
+        </div>
         <dl>
             <dt><span class="paramLabel">Parameters:</span></dt>
             <dd><code>yyyymmdd</code> - date string in yyyyMMdd format</dd>
             <dt><span class="returnLabel">Returns:</span></dt>
-            <dd>An <a href="https://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/Classes/NSDate_Class/" target="_blank"><code>NSDate</code></a> instance corresponding to the provided date string.</dd>
+            <dd>An <a
+                    href="https://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/Classes/NSDate_Class/"
+                    target="_blank"><code>NSDate</code></a> instance corresponding to the provided date string.
+            </dd>
             <dt><span class="throwsLabel">Throws:</span></dt>
-            <dd><code>NSException</code> - if the string contains non numerics, contains an invalid date string, or is in an incorrect format</dd>
+            <dd><code>NSException</code> - if the string contains non numerics, contains an invalid date string, or is
+                in an incorrect format
+            </dd>
         </dl>
     </div>
 
@@ -160,6 +184,22 @@ Documentation for the COPPA age check library for iOS. Download <a href="https:/
     </div>
 </div>
 </p>
+<a name="changelist"></a>
 
+<div class="container">
+    <h2>Changelist</h2>
+
+    <h4>1.1.0</h4>
+    <ul>
+        <li>Simplified logic by replacing age calculation and check with minimum age check</li>
+        <li>Removed <code>CalculateAge</code> NSDate extension method.</li>
+    </ul>
+
+    <h4>1.0.0</h4>
+    <ul>
+        <li>Initial release</li>
+    </ul>
+
+</div>
 </body>
 </html>
